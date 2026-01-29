@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/mobile/layout,_N_T_/mobile/farms/layout,_N_T_/mobile/farms/page,_N_T_/mobile/farms"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/mobile/farms/__PAGE__",
+    "/mobile/farms",
+    "/mobile",
+    "/_index",
+    "/_head"
+  ]
+}

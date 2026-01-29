@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/c5fb1fdf1e4a65a6.js","/_next/static/chunks/64c0a5e3a0354479.js"],"ViewportBoundary"]
+4:I[97367,["/_next/static/chunks/c5fb1fdf1e4a65a6.js","/_next/static/chunks/64c0a5e3a0354479.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+7:I[27201,["/_next/static/chunks/c5fb1fdf1e4a65a6.js","/_next/static/chunks/64c0a5e3a0354479.js"],"IconMark"]
+0:{"buildId":"klQd4iTrpZN4QikQLgC8O","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1"}]]
+6:[["$","title","0",{"children":"Land Directorate Farm Management System"}],["$","meta","1",{"name":"description","content":"Professional agricultural management dashboard for farm officers"}],["$","meta","2",{"name":"generator","content":"v0.app"}],["$","link","3",{"rel":"icon","href":"/logooo.png","media":"(prefers-color-scheme: light)"}],["$","link","4",{"rel":"icon","href":"/logooo.png","media":"(prefers-color-scheme: dark)"}],["$","link","5",{"rel":"icon","href":"/logoo.svg","type":"image/svg+xml"}],["$","link","6",{"rel":"apple-touch-icon","href":"/logooo.png"}],["$","$L7","7",{}]]

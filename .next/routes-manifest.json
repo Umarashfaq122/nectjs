@@ -1,0 +1,197 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/mobile/farm/[id]",
+      "regex": "^/mobile/farm/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/mobile/farm/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/alerts",
+      "regex": "^/alerts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/alerts(?:/)?$"
+    },
+    {
+      "page": "/analytics",
+      "regex": "^/analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/analytics(?:/)?$"
+    },
+    {
+      "page": "/crops",
+      "regex": "^/crops(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/crops(?:/)?$"
+    },
+    {
+      "page": "/data-entry",
+      "regex": "^/data\\-entry(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/data\\-entry(?:/)?$"
+    },
+    {
+      "page": "/data-entry/history",
+      "regex": "^/data\\-entry/history(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/data\\-entry/history(?:/)?$"
+    },
+    {
+      "page": "/farms",
+      "regex": "^/farms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/farms(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/mobile",
+      "regex": "^/mobile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile(?:/)?$"
+    },
+    {
+      "page": "/mobile/alerts",
+      "regex": "^/mobile/alerts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/alerts(?:/)?$"
+    },
+    {
+      "page": "/mobile/crops",
+      "regex": "^/mobile/crops(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/crops(?:/)?$"
+    },
+    {
+      "page": "/mobile/dashboard",
+      "regex": "^/mobile/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/dashboard(?:/)?$"
+    },
+    {
+      "page": "/mobile/farms",
+      "regex": "^/mobile/farms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/farms(?:/)?$"
+    },
+    {
+      "page": "/mobile/log-data",
+      "regex": "^/mobile/log\\-data(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/log\\-data(?:/)?$"
+    },
+    {
+      "page": "/mobile/profile",
+      "regex": "^/mobile/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/profile(?:/)?$"
+    },
+    {
+      "page": "/mobile/recommendations",
+      "regex": "^/mobile/recommendations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/recommendations(?:/)?$"
+    },
+    {
+      "page": "/mobile/tasks",
+      "regex": "^/mobile/tasks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile/tasks(?:/)?$"
+    },
+    {
+      "page": "/recommendation",
+      "regex": "^/recommendation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/recommendation(?:/)?$"
+    },
+    {
+      "page": "/settings",
+      "regex": "^/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/settings(?:/)?$"
+    },
+    {
+      "page": "/stages",
+      "regex": "^/stages(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/stages(?:/)?$"
+    },
+    {
+      "page": "/tasks",
+      "regex": "^/tasks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tasks(?:/)?$"
+    },
+    {
+      "page": "/visits",
+      "regex": "^/visits(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/visits(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
