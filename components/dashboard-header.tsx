@@ -123,7 +123,7 @@ export function DashboardHeader() {
   };
 
   const handleLogin = () => {
-    router.push("/login");
+    router.push("/");
   };
 
   return (
