@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Bell, User, Calendar, Edit, LogOut } from "lucide-react";
+import { Bell, User, Calendar, LogIn, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/navigation";
@@ -39,19 +39,20 @@ export function DashboardHeader() {
   const [openLogoutDialog, setOpenLogoutDialog] = useState(false);
 
   const [user, setUser] = useState<any>(null);
-  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const router = useRouter();
   const currentDate = new Date();
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     const data = localStorage.getItem("userData");
-    if (data) {
-      setUser(JSON.parse(data));
-    }
 
-    if (!token) {
-      router.replace("/login");
+    if (token) {
+      setIsAuthenticated(true);
+      if (data) setUser(JSON.parse(data));
+    } else {
+      setIsAuthenticated(false);
     }
   }, []);
 
@@ -81,7 +82,7 @@ export function DashboardHeader() {
       image = "/seasons/rabi.jpg";
       data = {
         cereals: ["Wheat", "Barley", "Oats", "Raya"],
-        grams: ["Chickpeas", "Lentil(Masoor)"],
+        grams: ["Chickpeas", "Lentil (Masoor)"],
         vegetables: ["Spinach", "Carrot", "Cauliflower"],
         fruits: ["Orange", "Pomegranate", "Guava"],
       };
@@ -90,8 +91,8 @@ export function DashboardHeader() {
       image = "/seasons/kharif.jpg";
       data = {
         cereals: ["Cotton", "Rice", "Maize", "Sorghum"],
-        vegetables: ["Okra", "Cucumber", "Bitter Gourd"],
         grams: ["Mash", "Moong"],
+        vegetables: ["Okra", "Cucumber", "Bitter Gourd"],
         fruits: ["Mango", "Banana", "Papaya"],
       };
     }
@@ -108,9 +109,10 @@ export function DashboardHeader() {
       localStorage.removeItem("userData");
       sessionStorage.clear();
       setUser(null);
+      setIsAuthenticated(false);
       setOpenUserModal(false);
       setOpenLogoutDialog(false);
-      window.location.href = "/";
+      router.push("/login");
     } catch (error) {
       console.error("Logout error:", error);
     }
@@ -118,6 +120,10 @@ export function DashboardHeader() {
 
   const confirmLogout = () => {
     setOpenLogoutDialog(true);
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
   };
 
   return (
@@ -146,18 +152,32 @@ export function DashboardHeader() {
               <span className="text-sm font-medium">{season}</span>
             </button>
 
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell size={20} />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />
-            </Button>
+            {isAuthenticated && (
+              <Button variant="ghost" size="icon" className="relative">
+                <Bell size={20} />
+                <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />
+              </Button>
+            )}
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setOpenUserModal(true)}
-            >
-              <User size={20} />
-            </Button>
+            {/* USER ICON OR LOGIN BUTTON */}
+            {isAuthenticated ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setOpenUserModal(true)}
+              >
+                <User size={20} />
+              </Button>
+            ) : (
+              <Button
+                variant="default"
+                onClick={handleLogin}
+                className="flex items-center gap-2"
+              >
+                <LogIn size={18} />
+                Login
+              </Button>
+            )}
           </div>
         </div>
       </header>

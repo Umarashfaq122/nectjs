@@ -88,6 +88,7 @@ export interface FarmData {
   method_of_sowing: string;
   seed_rate: string;
   raya_sowing_date: string;
+  zone_ids?: string[];
   farm_picture?: string | null;
   max_temp_day?: number | null;
   min_temp_day?: number | null;
@@ -119,9 +120,9 @@ export function SowingForm() {
     "all" | "wheat" | "rice" | "corn" | "cotton" | "other"
   >("all");
   const [selectedFarmNumber, setSelectedFarmNumber] = useState("all");
+  const [selectedZone, setSelectedZone] = useState("all");
+  const [availableZones, setAvailableZones] = useState<string[]>([]);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
-
-  /* ===================== FETCH ===================== */
 
   /* ===================== FETCH ===================== */
 
@@ -158,17 +159,28 @@ export function SowingForm() {
 
       const normalized: FarmData[] = (json.results || json || []).map(
         (farm: any) => {
+          // Handle method_of_sowing - now shows all methods
           let sowingMethod = "";
-          if (
-            Array.isArray(farm.method_of_sowing) &&
-            farm.method_of_sowing.length > 0
-          ) {
-            sowingMethod =
-              farm.method_of_sowing[0].sowing_method || "Not specified";
+          if (Array.isArray(farm.method_of_sowing)) {
+            if (farm.method_of_sowing.length > 0) {
+              if (
+                typeof farm.method_of_sowing[0] === "object" &&
+                farm.method_of_sowing[0].sowing_method
+              ) {
+                // Array of objects with sowing_method property
+                sowingMethod = farm.method_of_sowing
+                  .map((item: any) => item.sowing_method)
+                  .join(", ");
+              } else {
+                // Array of strings
+                sowingMethod = farm.method_of_sowing.join(", ");
+              }
+            }
           } else if (typeof farm.method_of_sowing === "string") {
             sowingMethod = farm.method_of_sowing;
           }
 
+          // Handle variety
           let varietyStr = "";
           if (Array.isArray(farm.variety) && farm.variety.length > 0) {
             varietyStr = farm.variety.join(", ");
@@ -176,12 +188,19 @@ export function SowingForm() {
             varietyStr = farm.variety;
           }
 
+          // Handle zone_ids
+          let zoneIds: string[] = [];
+          if (Array.isArray(farm.zone_ids)) {
+            zoneIds = farm.zone_ids.filter((zone: any) => zone && zone.trim());
+          }
+
+          // Handle aphid_recommendation
           let aphidRec = farm.aphid_recommendation;
           if (aphidRec === "") {
             aphidRec = null;
           }
 
-          // Handle basal fertilizers - check different possible field names
+          // Handle basal fertilizers
           let basalFertilizers = farm.basal_fertilizers_applied;
 
           // Debug log to see what we're getting
@@ -216,6 +235,7 @@ export function SowingForm() {
             seed_rate: farm.seed_rate || "Not specified",
             raya_sowing_date:
               farm.raya_sowing_date || new Date().toISOString().split("T")[0],
+            zone_ids: zoneIds,
             farm_picture: farm.farm_picture || null,
             max_temp_day: farm.max_temp_day || null,
             min_temp_day: farm.min_temp_day || null,
@@ -240,8 +260,18 @@ export function SowingForm() {
           id: f.id,
           farm: f.farm,
           fertilizers: f.basal_fertilizers_applied,
+          zones: f.zone_ids,
         })),
       );
+
+      // Extract unique zones
+      const zones = new Set<string>();
+      normalized.forEach((farm) => {
+        if (farm.zone_ids && farm.zone_ids.length > 0) {
+          farm.zone_ids.forEach((zone) => zones.add(zone));
+        }
+      });
+      setAvailableZones(Array.from(zones).sort());
 
       setFarmData(normalized);
       setFilteredFarms(normalized);
@@ -266,7 +296,8 @@ export function SowingForm() {
           (f.method_of_sowing?.toLowerCase() || "").includes(q) ||
           (f.farm?.toString() || "").includes(q) ||
           (f.farm_name?.toLowerCase() || "").includes(q) ||
-          (f.farmer_name?.toLowerCase() || "").includes(q),
+          (f.farmer_name?.toLowerCase() || "").includes(q) ||
+          (f.zone_ids?.some((zone) => zone.toLowerCase().includes(q)) || false),
       );
     }
 
@@ -280,8 +311,12 @@ export function SowingForm() {
       );
     }
 
+    if (selectedZone !== "all") {
+      results = results.filter((f) => f.zone_ids?.includes(selectedZone));
+    }
+
     setFilteredFarms(results);
-  }, [farmData, searchQuery, activeTab, selectedFarmNumber]);
+  }, [farmData, searchQuery, activeTab, selectedFarmNumber, selectedZone]);
 
   /* ===================== STATS ===================== */
 
@@ -300,6 +335,11 @@ export function SowingForm() {
     // Get unique crops count
     const uniqueCrops = new Set(
       farmData.map((f) => f.crop_name).filter(Boolean),
+    );
+
+    // Get unique zones count
+    const uniqueZones = new Set(
+      farmData.flatMap((f) => f.zone_ids || []).filter(Boolean),
     );
 
     // Farms with seed treatment
@@ -322,6 +362,7 @@ export function SowingForm() {
       total,
       varietiesCount: uniqueVarieties.size,
       cropsCount: uniqueCrops.size,
+      zonesCount: uniqueZones.size,
       farmsWithSeedTreatment,
       farmsWithSoilConditioner,
       farmsWithFertilizers,
@@ -497,19 +538,18 @@ export function SowingForm() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">
-                  Seed Treatment
+                  Zones
                 </p>
-                <p className="text-3xl font-bold mt-2 text-emerald-600">
-                  {stats.farmsWithSeedTreatment}
+                <p className="text-3xl font-bold mt-2 text-green-600">
+                  {stats.zonesCount}
                 </p>
               </div>
-              <div className="h-12 w-12 bg-emerald-50 rounded-full flex items-center justify-center">
-                <Shield className="h-6 w-6 text-emerald-600" />
+              <div className="h-12 w-12 bg-green-50 rounded-full flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-green-600" />
               </div>
             </div>
-            <Progress value={stats.seedTreatmentPercentage} className="mt-3" />
             <p className="text-xs text-muted-foreground mt-2">
-              {stats.seedTreatmentPercentage}% of farms
+              {stats.zonesCount} active zones
             </p>
           </CardContent>
         </Card>
@@ -525,7 +565,9 @@ export function SowingForm() {
                   {stats.farmsWithFertilizers}
                 </p>
               </div>
-              <div className="h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center"></div>
+              <div className="h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center">
+                <FlaskConical className="h-6 w-6 text-orange-600" />
+              </div>
             </div>
             <Progress
               value={stats.fertilizersPercentage}
@@ -546,7 +588,7 @@ export function SowingForm() {
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search farms, crops, varieties, farmers..."
+                  placeholder="Search farms, crops, varieties, farmers, zones..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9"
@@ -578,6 +620,28 @@ export function SowingForm() {
                       </SelectItem>
                     );
                   })}
+                </SelectContent>
+              </Select>
+
+              <Select value={selectedZone} onValueChange={setSelectedZone}>
+                <SelectTrigger className="w-full sm:w-48">
+                  <MapPin className="h-4 w-4 mr-2" />
+                  <SelectValue placeholder="Select Zone" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Zones</SelectItem>
+                  {availableZones.map((zone) => (
+                    <SelectItem key={zone} value={zone}>
+                      <div className="flex flex-col">
+                        <span className="font-medium">{zone}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {farmData.filter((f) => f.zone_ids?.includes(zone))
+                            .length}{" "}
+                          farms
+                        </span>
+                      </div>
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -655,6 +719,12 @@ export function SowingForm() {
                     <div className="flex items-center gap-2 text-sm">
                       <Calendar className="h-4 w-4 text-muted-foreground" />
                       <span>Sown on {formatDate(farm.raya_sowing_date)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <MapPin className="h-4 w-4 text-muted-foreground" />
+                      <span>
+                        {farm.zone_ids?.join(", ") || "No zone assigned"}
+                      </span>
                     </div>
                   </div>
 
@@ -740,6 +810,7 @@ export function SowingForm() {
                   setSearchQuery("");
                   setActiveTab("all");
                   setSelectedFarmNumber("all");
+                  setSelectedZone("all");
                 }}
               >
                 Clear all filters
@@ -779,6 +850,16 @@ export function SowingForm() {
                           <User className="h-3 w-3" />
                           {selectedFarm.farmer_name}
                         </span>
+                        {selectedFarm.zone_ids &&
+                          selectedFarm.zone_ids.length > 0 && (
+                            <>
+                              <span className="text-gray-400">•</span>
+                              <span className="flex items-center gap-1 text-gray-600">
+                                <MapPin className="h-3 w-3" />
+                                {selectedFarm.zone_ids.join(", ")}
+                              </span>
+                            </>
+                          )}
                       </div>
                     </DialogDescription>
                   </div>
@@ -818,7 +899,7 @@ export function SowingForm() {
                         <div className="space-y-3">
                           <div>
                             <p className="text-xs text-gray-500 mb-1">
-                              Sowing Method
+                              Sowing Method(s)
                             </p>
                             <p className="font-medium">
                               {selectedFarm.method_of_sowing}
@@ -845,17 +926,51 @@ export function SowingForm() {
                     </CardContent>
                   </Card>
 
-                  {/* FERTILIZERS CARD */}
+                  {/* ZONES CARD */}
                   <Card>
                     <CardContent className="p-4">
                       <div className="space-y-4">
                         <div className="flex items-center gap-2">
-                          <h4 className="font-medium">Basal Fertilizers</h4>
+                          <MapPin className="h-4 w-4 text-gray-500" />
+                          <h4 className="font-medium">Farm Zones</h4>
                         </div>
                         <div className="space-y-3">
-                          {selectedFarm.basal_fertilizers_applied &&
-                          selectedFarm.basal_fertilizers_applied.length > 0 ? (
-                            selectedFarm.basal_fertilizers_applied.map(
+                          {selectedFarm.zone_ids &&
+                          selectedFarm.zone_ids.length > 0 ? (
+                            <div className="flex flex-wrap gap-2">
+                              {selectedFarm.zone_ids.map((zone, index) => (
+                                <Badge
+                                  key={index}
+                                  variant="secondary"
+                                  className="bg-blue-50 text-blue-700 border-blue-200"
+                                >
+                                  <MapPin className="h-3 w-3 mr-1" />
+                                  {zone}
+                                </Badge>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="text-center py-4 text-gray-500">
+                              <p>No zones assigned</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* FERTILIZERS CARD */}
+                {selectedFarm.basal_fertilizers_applied &&
+                  selectedFarm.basal_fertilizers_applied.length > 0 && (
+                    <Card>
+                      <CardContent className="p-4">
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-2">
+                            <h4 className="font-medium">Basal Fertilizers</h4>
+                          </div>
+                          <div className="space-y-3">
+                            {selectedFarm.basal_fertilizers_applied.map(
                               (fertilizer, index) => (
                                 <div
                                   key={index}
@@ -871,17 +986,12 @@ export function SowingForm() {
                                   </Badge>
                                 </div>
                               ),
-                            )
-                          ) : (
-                            <div className="text-center py-4 text-gray-500">
-                              <p>No fertilizers applied</p>
-                            </div>
-                          )}
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                      </CardContent>
+                    </Card>
+                  )}
 
                 {/* ENVIRONMENTAL DATA - INCLUDING NIGHT TEMP */}
                 {(selectedFarm.max_temp_day !== null ||

@@ -23,6 +23,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/search.js [app-client] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user.js [app-client] (ecmascript) <export default as User>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$thermometer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Thermometer$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/thermometer.js [app-client] (ecmascript) <export default as Thermometer>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/eye.js [app-client] (ecmascript) <export default as Eye>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-client] (ecmascript) <export default as ChevronRight>");
@@ -69,8 +70,10 @@ function SowingForm() {
     const [searchQuery, setSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("all");
     const [selectedFarmNumber, setSelectedFarmNumber] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("all");
+    const [selectedZone, setSelectedZone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("all");
+    const [availableZones, setAvailableZones] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isDetailModalOpen, setIsDetailModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    /* ===================== FETCH ===================== */ /* ===================== FETCH ===================== */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+    /* ===================== FETCH ===================== */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "SowingForm.useEffect": ()=>{
             fetchFarmData();
         }
@@ -92,23 +95,39 @@ function SowingForm() {
             console.log("Fetched Sowing & Emergence Data:", json);
             console.log("Sample farm data with fertilizers:", json.results?.[0]?.basal_fertilizers_applied);
             const normalized = (json.results || json || []).map((farm)=>{
+                // Handle method_of_sowing - now shows all methods
                 let sowingMethod = "";
-                if (Array.isArray(farm.method_of_sowing) && farm.method_of_sowing.length > 0) {
-                    sowingMethod = farm.method_of_sowing[0].sowing_method || "Not specified";
+                if (Array.isArray(farm.method_of_sowing)) {
+                    if (farm.method_of_sowing.length > 0) {
+                        if (typeof farm.method_of_sowing[0] === "object" && farm.method_of_sowing[0].sowing_method) {
+                            // Array of objects with sowing_method property
+                            sowingMethod = farm.method_of_sowing.map((item)=>item.sowing_method).join(", ");
+                        } else {
+                            // Array of strings
+                            sowingMethod = farm.method_of_sowing.join(", ");
+                        }
+                    }
                 } else if (typeof farm.method_of_sowing === "string") {
                     sowingMethod = farm.method_of_sowing;
                 }
+                // Handle variety
                 let varietyStr = "";
                 if (Array.isArray(farm.variety) && farm.variety.length > 0) {
                     varietyStr = farm.variety.join(", ");
                 } else if (typeof farm.variety === "string") {
                     varietyStr = farm.variety;
                 }
+                // Handle zone_ids
+                let zoneIds = [];
+                if (Array.isArray(farm.zone_ids)) {
+                    zoneIds = farm.zone_ids.filter((zone)=>zone && zone.trim());
+                }
+                // Handle aphid_recommendation
                 let aphidRec = farm.aphid_recommendation;
                 if (aphidRec === "") {
                     aphidRec = null;
                 }
-                // Handle basal fertilizers - check different possible field names
+                // Handle basal fertilizers
                 let basalFertilizers = farm.basal_fertilizers_applied;
                 // Debug log to see what we're getting
                 console.log(`Farm ${farm.id} fertilizers:`, basalFertilizers);
@@ -134,6 +153,7 @@ function SowingForm() {
                     method_of_sowing: sowingMethod,
                     seed_rate: farm.seed_rate || "Not specified",
                     raya_sowing_date: farm.raya_sowing_date || new Date().toISOString().split("T")[0],
+                    zone_ids: zoneIds,
                     farm_picture: farm.farm_picture || null,
                     max_temp_day: farm.max_temp_day || null,
                     min_temp_day: farm.min_temp_day || null,
@@ -153,8 +173,17 @@ function SowingForm() {
             console.log("Normalized data with fertilizers:", normalized.map((f)=>({
                     id: f.id,
                     farm: f.farm,
-                    fertilizers: f.basal_fertilizers_applied
+                    fertilizers: f.basal_fertilizers_applied,
+                    zones: f.zone_ids
                 })));
+            // Extract unique zones
+            const zones = new Set();
+            normalized.forEach((farm)=>{
+                if (farm.zone_ids && farm.zone_ids.length > 0) {
+                    farm.zone_ids.forEach((zone)=>zones.add(zone));
+                }
+            });
+            setAvailableZones(Array.from(zones).sort());
             setFarmData(normalized);
             setFilteredFarms(normalized);
         } catch (err) {
@@ -171,7 +200,9 @@ function SowingForm() {
             if (searchQuery.trim()) {
                 const q = searchQuery.toLowerCase();
                 results = results.filter({
-                    "SowingForm.useEffect": (f)=>(f.crop_name?.toLowerCase() || "").includes(q) || (f.variety?.toLowerCase() || "").includes(q) || (f.method_of_sowing?.toLowerCase() || "").includes(q) || (f.farm?.toString() || "").includes(q) || (f.farm_name?.toLowerCase() || "").includes(q) || (f.farmer_name?.toLowerCase() || "").includes(q)
+                    "SowingForm.useEffect": (f)=>(f.crop_name?.toLowerCase() || "").includes(q) || (f.variety?.toLowerCase() || "").includes(q) || (f.method_of_sowing?.toLowerCase() || "").includes(q) || (f.farm?.toString() || "").includes(q) || (f.farm_name?.toLowerCase() || "").includes(q) || (f.farmer_name?.toLowerCase() || "").includes(q) || f.zone_ids?.some({
+                            "SowingForm.useEffect": (zone)=>zone.toLowerCase().includes(q)
+                        }["SowingForm.useEffect"]) || false
                 }["SowingForm.useEffect"]);
             }
             if (selectedFarmNumber !== "all") {
@@ -184,13 +215,19 @@ function SowingForm() {
                     "SowingForm.useEffect": (f)=>f.crop_name?.toLowerCase().includes(activeTab)
                 }["SowingForm.useEffect"]);
             }
+            if (selectedZone !== "all") {
+                results = results.filter({
+                    "SowingForm.useEffect": (f)=>f.zone_ids?.includes(selectedZone)
+                }["SowingForm.useEffect"]);
+            }
             setFilteredFarms(results);
         }
     }["SowingForm.useEffect"], [
         farmData,
         searchQuery,
         activeTab,
-        selectedFarmNumber
+        selectedFarmNumber,
+        selectedZone
     ]);
     /* ===================== STATS ===================== */ const stats = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "SowingForm.useMemo[stats]": ()=>{
@@ -205,6 +242,10 @@ function SowingForm() {
             // Get unique crops count
             const uniqueCrops = new Set(farmData.map({
                 "SowingForm.useMemo[stats]": (f)=>f.crop_name
+            }["SowingForm.useMemo[stats]"]).filter(Boolean));
+            // Get unique zones count
+            const uniqueZones = new Set(farmData.flatMap({
+                "SowingForm.useMemo[stats]": (f)=>f.zone_ids || []
             }["SowingForm.useMemo[stats]"]).filter(Boolean));
             // Farms with seed treatment
             const farmsWithSeedTreatment = farmData.filter({
@@ -222,6 +263,7 @@ function SowingForm() {
                 total,
                 varietiesCount: uniqueVarieties.size,
                 cropsCount: uniqueCrops.size,
+                zonesCount: uniqueZones.size,
                 farmsWithSeedTreatment,
                 farmsWithSoilConditioner,
                 farmsWithFertilizers,
@@ -250,35 +292,35 @@ function SowingForm() {
             className: "h-5 w-5"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 356,
+            lineNumber: 397,
             columnNumber: 45
         }, this);
         if (lowerCrop.includes("rice")) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sprout$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sprout$3e$__["Sprout"], {
             className: "h-5 w-5"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 357,
+            lineNumber: 398,
             columnNumber: 44
         }, this);
         if (lowerCrop.includes("corn") || lowerCrop.includes("maize")) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$leaf$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Leaf$3e$__["Leaf"], {
             className: "h-5 w-5"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 359,
+            lineNumber: 400,
             columnNumber: 14
         }, this);
         if (lowerCrop.includes("cotton")) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$package$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Package$3e$__["Package"], {
             className: "h-5 w-5"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 360,
+            lineNumber: 401,
             columnNumber: 46
         }, this);
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trees$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trees$3e$__["Trees"], {
             className: "h-5 w-5"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 361,
+            lineNumber: 402,
             columnNumber: 12
         }, this);
     };
@@ -301,20 +343,20 @@ function SowingForm() {
                             className: "h-10 w-64"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 380,
+                            lineNumber: 421,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                             className: "h-10 w-24"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 381,
+                            lineNumber: 422,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 379,
+                    lineNumber: 420,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -328,12 +370,12 @@ function SowingForm() {
                             className: "h-24"
                         }, i, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 387,
+                            lineNumber: 428,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 385,
+                    lineNumber: 426,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -343,27 +385,27 @@ function SowingForm() {
                             className: "h-10 flex-1"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 393,
+                            lineNumber: 434,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                             className: "h-10 w-40"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 394,
+                            lineNumber: 435,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                             className: "h-10 w-48"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 395,
+                            lineNumber: 436,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 392,
+                    lineNumber: 433,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -379,18 +421,18 @@ function SowingForm() {
                             className: "h-64"
                         }, i, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 401,
+                            lineNumber: 442,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 399,
+                    lineNumber: 440,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 378,
+            lineNumber: 419,
             columnNumber: 7
         }, this);
     }
@@ -406,12 +448,12 @@ function SowingForm() {
                             className: "h-8 w-8 text-red-600"
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 413,
+                            lineNumber: 454,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 412,
+                        lineNumber: 453,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -419,7 +461,7 @@ function SowingForm() {
                         children: "Failed to Load Data"
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 415,
+                        lineNumber: 456,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -427,7 +469,7 @@ function SowingForm() {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 416,
+                        lineNumber: 457,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -441,14 +483,14 @@ function SowingForm() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 419,
+                                        lineNumber: 460,
                                         columnNumber: 15
                                     }, this),
                                     "Retry"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 418,
+                                lineNumber: 459,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -457,24 +499,24 @@ function SowingForm() {
                                 children: "Dismiss"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 422,
+                                lineNumber: 463,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 417,
+                        lineNumber: 458,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 411,
+                lineNumber: 452,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-            lineNumber: 410,
+            lineNumber: 451,
             columnNumber: 7
         }, this);
     }
@@ -491,7 +533,7 @@ function SowingForm() {
                                 children: "Farm Sowing Dashboard"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 436,
+                                lineNumber: 477,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -499,13 +541,13 @@ function SowingForm() {
                                 children: "Monitor crop varieties, sowing methods, and farm conditions"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 439,
+                                lineNumber: 480,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 435,
+                        lineNumber: 476,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -520,25 +562,25 @@ function SowingForm() {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 450,
+                                    lineNumber: 491,
                                     columnNumber: 13
                                 }, this),
                                 "Refresh"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 444,
+                            lineNumber: 485,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 443,
+                        lineNumber: 484,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 434,
+                lineNumber: 475,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -557,7 +599,7 @@ function SowingForm() {
                                                 children: "Total Farms"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 462,
+                                                lineNumber: 503,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -565,13 +607,13 @@ function SowingForm() {
                                                 children: stats.total
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 465,
+                                                lineNumber: 506,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 461,
+                                        lineNumber: 502,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -580,28 +622,28 @@ function SowingForm() {
                                             className: "h-6 w-6 text-blue-600"
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 468,
+                                            lineNumber: 509,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 467,
+                                        lineNumber: 508,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 460,
+                                lineNumber: 501,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 459,
+                            lineNumber: 500,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 458,
+                        lineNumber: 499,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -618,7 +660,7 @@ function SowingForm() {
                                                     children: "Crop Varieties"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 478,
+                                                    lineNumber: 519,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -626,13 +668,13 @@ function SowingForm() {
                                                     children: stats.varietiesCount
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 481,
+                                                    lineNumber: 522,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 477,
+                                            lineNumber: 518,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -641,18 +683,18 @@ function SowingForm() {
                                                 className: "h-6 w-6 text-purple-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 486,
+                                                lineNumber: 527,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 485,
+                                            lineNumber: 526,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 476,
+                                    lineNumber: 517,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -660,18 +702,18 @@ function SowingForm() {
                                     children: "Across all farms"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 489,
+                                    lineNumber: 530,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 475,
+                            lineNumber: 516,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 474,
+                        lineNumber: 515,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -685,74 +727,66 @@ function SowingForm() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-sm font-medium text-muted-foreground",
-                                                    children: "Seed Treatment"
+                                                    children: "Zones"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 499,
+                                                    lineNumber: 540,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-3xl font-bold mt-2 text-emerald-600",
-                                                    children: stats.farmsWithSeedTreatment
+                                                    className: "text-3xl font-bold mt-2 text-green-600",
+                                                    children: stats.zonesCount
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 502,
+                                                    lineNumber: 543,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 498,
+                                            lineNumber: 539,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-12 w-12 bg-emerald-50 rounded-full flex items-center justify-center",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"], {
-                                                className: "h-6 w-6 text-emerald-600"
+                                            className: "h-12 w-12 bg-green-50 rounded-full flex items-center justify-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                className: "h-6 w-6 text-green-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 507,
+                                                lineNumber: 548,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 506,
+                                            lineNumber: 547,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 497,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Progress"], {
-                                    value: stats.seedTreatmentPercentage,
-                                    className: "mt-3"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 510,
+                                    lineNumber: 538,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xs text-muted-foreground mt-2",
                                     children: [
-                                        stats.seedTreatmentPercentage,
-                                        "% of farms"
+                                        stats.zonesCount,
+                                        " active zones"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 511,
+                                    lineNumber: 551,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 496,
+                            lineNumber: 537,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 495,
+                        lineNumber: 536,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -769,7 +803,7 @@ function SowingForm() {
                                                     children: "Fertilizers"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 521,
+                                                    lineNumber: 561,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -777,26 +811,33 @@ function SowingForm() {
                                                     children: stats.farmsWithFertilizers
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 524,
+                                                    lineNumber: 564,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 520,
+                                            lineNumber: 560,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center"
+                                            className: "h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$flask$2d$conical$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FlaskConical$3e$__["FlaskConical"], {
+                                                className: "h-6 w-6 text-orange-600"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                lineNumber: 569,
+                                                columnNumber: 17
+                                            }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 528,
+                                            lineNumber: 568,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 519,
+                                    lineNumber: 559,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Progress"], {
@@ -804,7 +845,7 @@ function SowingForm() {
                                     className: "mt-3 bg-orange-100"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 530,
+                                    lineNumber: 572,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -815,24 +856,24 @@ function SowingForm() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 534,
+                                    lineNumber: 576,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 518,
+                            lineNumber: 558,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 517,
+                        lineNumber: 557,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 457,
+                lineNumber: 498,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -851,23 +892,23 @@ function SowingForm() {
                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 547,
+                                                lineNumber: 589,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                                placeholder: "Search farms, crops, varieties, farmers...",
+                                                placeholder: "Search farms, crops, varieties, farmers, zones...",
                                                 value: searchQuery,
                                                 onChange: (e)=>setSearchQuery(e.target.value),
                                                 className: "pl-9"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 548,
+                                                lineNumber: 590,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 546,
+                                        lineNumber: 588,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -881,20 +922,20 @@ function SowingForm() {
                                                         className: "h-4 w-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 561,
+                                                        lineNumber: 603,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {
                                                         placeholder: "Select Farm"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 562,
+                                                        lineNumber: 604,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 560,
+                                                lineNumber: 602,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -904,7 +945,7 @@ function SowingForm() {
                                                         children: "All Farms"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 565,
+                                                        lineNumber: 607,
                                                         columnNumber: 19
                                                     }, this),
                                                     getUniqueFarmNumbers().map((num)=>{
@@ -922,7 +963,7 @@ function SowingForm() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 573,
+                                                                        lineNumber: 615,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -930,37 +971,122 @@ function SowingForm() {
                                                                         children: farm?.farm_name || "Unknown Farm"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 574,
+                                                                        lineNumber: 616,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 572,
+                                                                lineNumber: 614,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, num, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 571,
+                                                            lineNumber: 613,
                                                             columnNumber: 23
                                                         }, this);
                                                     })
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 564,
+                                                lineNumber: 606,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 556,
+                                        lineNumber: 598,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
+                                        value: selectedZone,
+                                        onValueChange: setSelectedZone,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
+                                                className: "w-full sm:w-48",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                        className: "h-4 w-4 mr-2"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                        lineNumber: 628,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {
+                                                        placeholder: "Select Zone"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                        lineNumber: 629,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                lineNumber: 627,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                        value: "all",
+                                                        children: "All Zones"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                        lineNumber: 632,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    availableZones.map((zone)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                            value: zone,
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex flex-col",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "font-medium",
+                                                                        children: zone
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 636,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-xs text-muted-foreground",
+                                                                        children: [
+                                                                            farmData.filter((f)=>f.zone_ids?.includes(zone)).length,
+                                                                            " ",
+                                                                            "farms"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 637,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                lineNumber: 635,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        }, zone, false, {
+                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                            lineNumber: 634,
+                                                            columnNumber: 21
+                                                        }, this))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                lineNumber: 631,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                        lineNumber: 626,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 545,
+                                lineNumber: 587,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -978,7 +1104,7 @@ function SowingForm() {
                                                 children: "All Crops"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 592,
+                                                lineNumber: 656,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -989,46 +1115,46 @@ function SowingForm() {
                                                         className: "h-3 w-3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 596,
+                                                        lineNumber: 660,
                                                         columnNumber: 21
                                                     }, this),
                                                     "Wheat"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 595,
+                                                lineNumber: 659,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 591,
+                                        lineNumber: 655,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 586,
+                                    lineNumber: 650,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 585,
+                                lineNumber: 649,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 544,
+                        lineNumber: 586,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 543,
+                    lineNumber: 585,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 542,
+                lineNumber: 584,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1041,7 +1167,7 @@ function SowingForm() {
                                 children: "Farm Overview"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 609,
+                                lineNumber: 673,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1055,13 +1181,13 @@ function SowingForm() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 610,
+                                lineNumber: 674,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 608,
+                        lineNumber: 672,
                         columnNumber: 9
                     }, this),
                     filteredFarms.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1083,12 +1209,12 @@ function SowingForm() {
                                                             children: getCropIcon(farm.crop_name)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 626,
+                                                            lineNumber: 690,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 625,
+                                                        lineNumber: 689,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1098,7 +1224,7 @@ function SowingForm() {
                                                                 children: farm.crop_name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 631,
+                                                                lineNumber: 695,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1107,24 +1233,24 @@ function SowingForm() {
                                                                 children: farm.variety.split(",")[0] || "Unknown Variety"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 634,
+                                                                lineNumber: 698,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 630,
+                                                        lineNumber: 694,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 624,
+                                                lineNumber: 688,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 623,
+                                            lineNumber: 687,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1137,7 +1263,7 @@ function SowingForm() {
                                                             className: "h-4 w-4 text-muted-foreground"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 646,
+                                                            lineNumber: 710,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1147,7 +1273,7 @@ function SowingForm() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 647,
+                                                            lineNumber: 711,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1155,7 +1281,7 @@ function SowingForm() {
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 648,
+                                                            lineNumber: 712,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1163,13 +1289,13 @@ function SowingForm() {
                                                             children: farm.farm_name
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 649,
+                                                            lineNumber: 713,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 645,
+                                                    lineNumber: 709,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1179,20 +1305,20 @@ function SowingForm() {
                                                             className: "h-4 w-4 text-muted-foreground"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 652,
+                                                            lineNumber: 716,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: farm.farmer_name
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 653,
+                                                            lineNumber: 717,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 651,
+                                                    lineNumber: 715,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1202,7 +1328,7 @@ function SowingForm() {
                                                             className: "h-4 w-4 text-muted-foreground"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 656,
+                                                            lineNumber: 720,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1212,26 +1338,49 @@ function SowingForm() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 657,
+                                                            lineNumber: 721,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 655,
+                                                    lineNumber: 719,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-2 text-sm",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                            className: "h-4 w-4 text-muted-foreground"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                            lineNumber: 724,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            children: farm.zone_ids?.join(", ") || "No zone assigned"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                            lineNumber: 725,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                    lineNumber: 723,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 644,
+                                            lineNumber: 708,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "my-4"
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 661,
+                                            lineNumber: 731,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1244,7 +1393,7 @@ function SowingForm() {
                                                             children: "Sowing Method"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 665,
+                                                            lineNumber: 735,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1252,13 +1401,13 @@ function SowingForm() {
                                                             children: farm.method_of_sowing
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 668,
+                                                            lineNumber: 738,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 664,
+                                                    lineNumber: 734,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1268,7 +1417,7 @@ function SowingForm() {
                                                             children: "Seed Rate"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 673,
+                                                            lineNumber: 743,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1276,19 +1425,19 @@ function SowingForm() {
                                                             children: farm.seed_rate
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 676,
+                                                            lineNumber: 746,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 672,
+                                                    lineNumber: 742,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 663,
+                                            lineNumber: 733,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1302,14 +1451,14 @@ function SowingForm() {
                                                             className: "h-3 w-3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 686,
+                                                            lineNumber: 756,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Seed Treated"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 682,
+                                                    lineNumber: 752,
                                                     columnNumber: 23
                                                 }, this),
                                                 farm.soil_conditioner && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1320,14 +1469,14 @@ function SowingForm() {
                                                             className: "h-3 w-3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 695,
+                                                            lineNumber: 765,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Soil Conditioned"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 691,
+                                                    lineNumber: 761,
                                                     columnNumber: 23
                                                 }, this),
                                                 farm.basal_fertilizers_applied && farm.basal_fertilizers_applied.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1336,13 +1485,13 @@ function SowingForm() {
                                                     children: "Fertilized"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 701,
+                                                    lineNumber: 771,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 680,
+                                            lineNumber: 750,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1357,7 +1506,7 @@ function SowingForm() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 718,
+                                                    lineNumber: 788,
                                                     columnNumber: 21
                                                 }, this),
                                                 "View Details",
@@ -1365,29 +1514,29 @@ function SowingForm() {
                                                     className: "ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 720,
+                                                    lineNumber: 790,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 710,
+                                            lineNumber: 780,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 622,
+                                    lineNumber: 686,
                                     columnNumber: 17
                                 }, this)
                             }, farm.id, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 618,
+                                lineNumber: 682,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 616,
+                        lineNumber: 680,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1399,12 +1548,12 @@ function SowingForm() {
                                         className: "h-8 w-8 text-muted-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 730,
+                                        lineNumber: 800,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 729,
+                                    lineNumber: 799,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1412,7 +1561,7 @@ function SowingForm() {
                                     children: "No farms found"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 732,
+                                    lineNumber: 802,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1420,7 +1569,7 @@ function SowingForm() {
                                     children: "No farms match your current filters. Try adjusting your search criteria."
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 733,
+                                    lineNumber: 803,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1429,28 +1578,29 @@ function SowingForm() {
                                         setSearchQuery("");
                                         setActiveTab("all");
                                         setSelectedFarmNumber("all");
+                                        setSelectedZone("all");
                                     },
                                     children: "Clear all filters"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 737,
+                                    lineNumber: 807,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                            lineNumber: 728,
+                            lineNumber: 798,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                        lineNumber: 727,
+                        lineNumber: 797,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 607,
+                lineNumber: 671,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -1471,12 +1621,12 @@ function SowingForm() {
                                                 children: getCropIcon(selectedFarm.crop_name)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 760,
+                                                lineNumber: 831,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 759,
+                                            lineNumber: 830,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1492,13 +1642,13 @@ function SowingForm() {
                                                             children: selectedFarm.farm_name
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 767,
+                                                            lineNumber: 838,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 765,
+                                                    lineNumber: 836,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -1513,7 +1663,7 @@ function SowingForm() {
                                                                         className: "h-3 w-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 774,
+                                                                        lineNumber: 845,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Farm #",
@@ -1521,7 +1671,7 @@ function SowingForm() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 773,
+                                                                lineNumber: 844,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1529,7 +1679,7 @@ function SowingForm() {
                                                                 children: "•"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 777,
+                                                                lineNumber: 848,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1539,42 +1689,71 @@ function SowingForm() {
                                                                         className: "h-3 w-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 779,
+                                                                        lineNumber: 850,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     selectedFarm.farmer_name
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 778,
+                                                                lineNumber: 849,
                                                                 columnNumber: 25
-                                                            }, this)
+                                                            }, this),
+                                                            selectedFarm.zone_ids && selectedFarm.zone_ids.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-gray-400",
+                                                                        children: "•"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 856,
+                                                                        columnNumber: 31
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "flex items-center gap-1 text-gray-600",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                                className: "h-3 w-3"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                                lineNumber: 858,
+                                                                                columnNumber: 33
+                                                                            }, this),
+                                                                            selectedFarm.zone_ids.join(", ")
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 857,
+                                                                        columnNumber: 31
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 772,
+                                                        lineNumber: 843,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 771,
+                                                    lineNumber: 842,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 764,
+                                            lineNumber: 835,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 758,
+                                    lineNumber: 829,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 757,
+                                lineNumber: 828,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1590,7 +1769,7 @@ function SowingForm() {
                                                         className: "h-5 w-5 text-amber-700"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 792,
+                                                        lineNumber: 873,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1598,13 +1777,13 @@ function SowingForm() {
                                                         children: "Crop Varieties"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 793,
+                                                        lineNumber: 874,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 791,
+                                                lineNumber: 872,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1614,18 +1793,18 @@ function SowingForm() {
                                                         children: variety.trim()
                                                     }, index, false, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 799,
+                                                        lineNumber: 880,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 797,
+                                                lineNumber: 878,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 790,
+                                        lineNumber: 871,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1644,7 +1823,7 @@ function SowingForm() {
                                                                         className: "h-4 w-4 text-gray-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 815,
+                                                                        lineNumber: 896,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1652,13 +1831,13 @@ function SowingForm() {
                                                                         children: "Sowing Information"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 816,
+                                                                        lineNumber: 897,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 814,
+                                                                lineNumber: 895,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1668,10 +1847,10 @@ function SowingForm() {
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                                 className: "text-xs text-gray-500 mb-1",
-                                                                                children: "Sowing Method"
+                                                                                children: "Sowing Method(s)"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 820,
+                                                                                lineNumber: 901,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1679,13 +1858,13 @@ function SowingForm() {
                                                                                 children: selectedFarm.method_of_sowing
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 823,
+                                                                                lineNumber: 904,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 819,
+                                                                        lineNumber: 900,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1695,7 +1874,7 @@ function SowingForm() {
                                                                                 children: "Seed Rate"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 828,
+                                                                                lineNumber: 909,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1703,13 +1882,13 @@ function SowingForm() {
                                                                                 children: selectedFarm.seed_rate
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 831,
+                                                                                lineNumber: 912,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 827,
+                                                                        lineNumber: 908,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1719,7 +1898,7 @@ function SowingForm() {
                                                                                 children: "Sowing Date"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 836,
+                                                                                lineNumber: 917,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1727,35 +1906,35 @@ function SowingForm() {
                                                                                 children: formatDate(selectedFarm.raya_sowing_date)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 839,
+                                                                                lineNumber: 920,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 835,
+                                                                        lineNumber: 916,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 818,
+                                                                lineNumber: 899,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 813,
+                                                        lineNumber: 894,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 812,
+                                                    lineNumber: 893,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 811,
+                                                lineNumber: 892,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1766,95 +1945,173 @@ function SowingForm() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "flex items-center gap-2",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                                    className: "font-medium",
-                                                                    children: "Basal Fertilizers"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 853,
-                                                                    columnNumber: 27
-                                                                }, this)
-                                                            }, void 0, false, {
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                        className: "h-4 w-4 text-gray-500"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 934,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                                        className: "font-medium",
+                                                                        children: "Farm Zones"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 935,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 852,
+                                                                lineNumber: 933,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "space-y-3",
-                                                                children: selectedFarm.basal_fertilizers_applied && selectedFarm.basal_fertilizers_applied.length > 0 ? selectedFarm.basal_fertilizers_applied.map((fertilizer, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                    className: "font-medium capitalize",
-                                                                                    children: fertilizer.fertilizer
+                                                                children: selectedFarm.zone_ids && selectedFarm.zone_ids.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex flex-wrap gap-2",
+                                                                    children: selectedFarm.zone_ids.map((zone, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                                                            variant: "secondary",
+                                                                            className: "bg-blue-50 text-blue-700 border-blue-200",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                                    className: "h-3 w-3 mr-1"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                    lineNumber: 865,
-                                                                                    columnNumber: 37
-                                                                                }, this)
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 864,
-                                                                                columnNumber: 35
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
-                                                                                variant: "default",
-                                                                                className: "text-sm",
-                                                                                children: [
-                                                                                    fertilizer.quantity,
-                                                                                    " kg/acre"
-                                                                                ]
-                                                                            }, void 0, true, {
-                                                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 869,
-                                                                                columnNumber: 35
-                                                                            }, this)
-                                                                        ]
-                                                                    }, index, true, {
-                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 860,
-                                                                        columnNumber: 33
-                                                                    }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    lineNumber: 947,
+                                                                                    columnNumber: 35
+                                                                                }, this),
+                                                                                zone
+                                                                            ]
+                                                                        }, index, true, {
+                                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                            lineNumber: 942,
+                                                                            columnNumber: 33
+                                                                        }, this))
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                    lineNumber: 940,
+                                                                    columnNumber: 29
+                                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "text-center py-4 text-gray-500",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        children: "No fertilizers applied"
+                                                                        children: "No zones assigned"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 877,
+                                                                        lineNumber: 954,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 876,
+                                                                    lineNumber: 953,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 855,
+                                                                lineNumber: 937,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 851,
+                                                        lineNumber: 932,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 850,
+                                                    lineNumber: 931,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 849,
+                                                lineNumber: 930,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 810,
+                                        lineNumber: 891,
                                         columnNumber: 17
+                                    }, this),
+                                    selectedFarm.basal_fertilizers_applied && selectedFarm.basal_fertilizers_applied.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
+                                            className: "p-4",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-2",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                            className: "font-medium",
+                                                            children: "Basal Fertilizers"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                            lineNumber: 970,
+                                                            columnNumber: 29
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                        lineNumber: 969,
+                                                        columnNumber: 27
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "space-y-3",
+                                                        children: selectedFarm.basal_fertilizers_applied.map((fertilizer, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex justify-between items-center p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "font-medium capitalize",
+                                                                            children: fertilizer.fertilizer
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                            lineNumber: 980,
+                                                                            columnNumber: 37
+                                                                        }, this)
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 979,
+                                                                        columnNumber: 35
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                                                        variant: "default",
+                                                                        className: "text-sm",
+                                                                        children: [
+                                                                            fertilizer.quantity,
+                                                                            " kg/acre"
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                        lineNumber: 984,
+                                                                        columnNumber: 35
+                                                                    }, this)
+                                                                ]
+                                                            }, index, true, {
+                                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                                lineNumber: 975,
+                                                                columnNumber: 33
+                                                            }, this))
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                        lineNumber: 972,
+                                                        columnNumber: 27
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                                lineNumber: 968,
+                                                columnNumber: 25
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                            lineNumber: 967,
+                                            columnNumber: 23
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/stage-forms/sowing-form.tsx",
+                                        lineNumber: 966,
+                                        columnNumber: 21
                                     }, this),
                                     (selectedFarm.max_temp_day !== null || selectedFarm.min_temp_day !== null || selectedFarm.avg_temp_night !== null || selectedFarm.humidity !== null || selectedFarm.precipitation !== null) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                         children: [
@@ -1867,19 +2124,19 @@ function SowingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 895,
+                                                            lineNumber: 1005,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Environmental Conditions"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 894,
+                                                    lineNumber: 1004,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 893,
+                                                lineNumber: 1003,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1893,7 +2150,7 @@ function SowingForm() {
                                                                     className: "h-6 w-6 mx-auto mb-2 text-orange-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 903,
+                                                                    lineNumber: 1013,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1904,7 +2161,7 @@ function SowingForm() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 904,
+                                                                    lineNumber: 1014,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1912,13 +2169,13 @@ function SowingForm() {
                                                                     children: "Max Temp"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 907,
+                                                                    lineNumber: 1017,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 902,
+                                                            lineNumber: 1012,
                                                             columnNumber: 27
                                                         }, this),
                                                         selectedFarm.min_temp_day !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1928,7 +2185,7 @@ function SowingForm() {
                                                                     className: "h-6 w-6 mx-auto mb-2 text-blue-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 912,
+                                                                    lineNumber: 1022,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1939,7 +2196,7 @@ function SowingForm() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 913,
+                                                                    lineNumber: 1023,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1947,13 +2204,13 @@ function SowingForm() {
                                                                     children: "Min Temp"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 916,
+                                                                    lineNumber: 1026,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 911,
+                                                            lineNumber: 1021,
                                                             columnNumber: 27
                                                         }, this),
                                                         selectedFarm.avg_temp_night !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1963,7 +2220,7 @@ function SowingForm() {
                                                                     className: "h-6 w-6 mx-auto mb-2 text-indigo-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 921,
+                                                                    lineNumber: 1031,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1974,7 +2231,7 @@ function SowingForm() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 922,
+                                                                    lineNumber: 1032,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1982,13 +2239,13 @@ function SowingForm() {
                                                                     children: "Night Temp"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 925,
+                                                                    lineNumber: 1035,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 920,
+                                                            lineNumber: 1030,
                                                             columnNumber: 27
                                                         }, this),
                                                         selectedFarm.humidity !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1998,7 +2255,7 @@ function SowingForm() {
                                                                     className: "h-6 w-6 mx-auto mb-2 text-cyan-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 930,
+                                                                    lineNumber: 1040,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2009,7 +2266,7 @@ function SowingForm() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 931,
+                                                                    lineNumber: 1041,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2017,13 +2274,13 @@ function SowingForm() {
                                                                     children: "Humidity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 934,
+                                                                    lineNumber: 1044,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 929,
+                                                            lineNumber: 1039,
                                                             columnNumber: 27
                                                         }, this),
                                                         selectedFarm.precipitation !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2033,7 +2290,7 @@ function SowingForm() {
                                                                     className: "h-6 w-6 mx-auto mb-2 text-indigo-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 939,
+                                                                    lineNumber: 1049,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2044,7 +2301,7 @@ function SowingForm() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 940,
+                                                                    lineNumber: 1050,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2052,30 +2309,30 @@ function SowingForm() {
                                                                     children: "Rainfall"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 943,
+                                                                    lineNumber: 1053,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 938,
+                                                            lineNumber: 1048,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 900,
+                                                    lineNumber: 1010,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 899,
+                                                lineNumber: 1009,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 892,
+                                        lineNumber: 1002,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2094,7 +2351,7 @@ function SowingForm() {
                                                                         className: "h-4 w-4 text-emerald-600"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 958,
+                                                                        lineNumber: 1068,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2102,13 +2359,13 @@ function SowingForm() {
                                                                         children: "Seed Treatment"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 959,
+                                                                        lineNumber: 1069,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 957,
+                                                                lineNumber: 1067,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2121,7 +2378,7 @@ function SowingForm() {
                                                                                 children: selectedFarm.seed_treatment ? "Applied" : "Not Applied"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 963,
+                                                                                lineNumber: 1073,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             selectedFarm.seed_treatment_product && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2129,13 +2386,13 @@ function SowingForm() {
                                                                                 children: selectedFarm.seed_treatment_product
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 969,
+                                                                                lineNumber: 1079,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 962,
+                                                                        lineNumber: 1072,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2143,29 +2400,29 @@ function SowingForm() {
                                                                         children: selectedFarm.seed_treatment ? "Yes" : "No"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 974,
+                                                                        lineNumber: 1084,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 961,
+                                                                lineNumber: 1071,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 956,
+                                                        lineNumber: 1066,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 955,
+                                                    lineNumber: 1065,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 954,
+                                                lineNumber: 1064,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2181,7 +2438,7 @@ function SowingForm() {
                                                                         className: "h-4 w-4 text-orange-600"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 993,
+                                                                        lineNumber: 1103,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2189,13 +2446,13 @@ function SowingForm() {
                                                                         children: "Soil Conditioner"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 994,
+                                                                        lineNumber: 1104,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 992,
+                                                                lineNumber: 1102,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2208,7 +2465,7 @@ function SowingForm() {
                                                                                 children: selectedFarm.soil_conditioner ? "Applied" : "Not Applied"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 998,
+                                                                                lineNumber: 1108,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             selectedFarm.soil_conditioner_product && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2216,13 +2473,13 @@ function SowingForm() {
                                                                                 children: selectedFarm.soil_conditioner_product
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 1004,
+                                                                                lineNumber: 1114,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 997,
+                                                                        lineNumber: 1107,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2230,29 +2487,29 @@ function SowingForm() {
                                                                         children: selectedFarm.soil_conditioner ? "Yes" : "No"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 1009,
+                                                                        lineNumber: 1119,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 996,
+                                                                lineNumber: 1106,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 991,
+                                                        lineNumber: 1101,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 990,
+                                                    lineNumber: 1100,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 989,
+                                                lineNumber: 1099,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2268,7 +2525,7 @@ function SowingForm() {
                                                                         className: "h-4 w-4 text-purple-600"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 1028,
+                                                                        lineNumber: 1138,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2276,13 +2533,13 @@ function SowingForm() {
                                                                         children: "Bio-stimulant"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 1029,
+                                                                        lineNumber: 1139,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 1027,
+                                                                lineNumber: 1137,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2291,34 +2548,34 @@ function SowingForm() {
                                                                     children: selectedFarm.bio_stimulant || "None applied"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 1032,
+                                                                    lineNumber: 1142,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 1031,
+                                                                lineNumber: 1141,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 1026,
+                                                        lineNumber: 1136,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 1025,
+                                                    lineNumber: 1135,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 1024,
+                                                lineNumber: 1134,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 952,
+                                        lineNumber: 1062,
                                         columnNumber: 17
                                     }, this),
                                     selectedFarm.aphid_recommendation && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2332,19 +2589,19 @@ function SowingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                            lineNumber: 1046,
+                                                            lineNumber: 1156,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Pest Management Recommendations"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 1045,
+                                                    lineNumber: 1155,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 1044,
+                                                lineNumber: 1154,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2359,12 +2616,12 @@ function SowingForm() {
                                                                     className: "h-4 w-4 text-blue-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                    lineNumber: 1054,
+                                                                    lineNumber: 1164,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 1053,
+                                                                lineNumber: 1163,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2375,7 +2632,7 @@ function SowingForm() {
                                                                         children: "Aphid Control"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 1057,
+                                                                        lineNumber: 1167,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2388,60 +2645,60 @@ function SowingForm() {
                                                                                         children: "•"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                        lineNumber: 1070,
+                                                                                        lineNumber: 1180,
                                                                                         columnNumber: 39
                                                                                     }, this),
                                                                                     rec
                                                                                 ]
                                                                             }, i, true, {
                                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                                lineNumber: 1066,
+                                                                                lineNumber: 1176,
                                                                                 columnNumber: 37
                                                                             }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                             className: "text-sm text-gray-700",
                                                                             children: selectedFarm.aphid_recommendation
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                            lineNumber: 1078,
+                                                                            lineNumber: 1188,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                        lineNumber: 1060,
+                                                                        lineNumber: 1170,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                                lineNumber: 1056,
+                                                                lineNumber: 1166,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                        lineNumber: 1052,
+                                                        lineNumber: 1162,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                    lineNumber: 1051,
+                                                    lineNumber: 1161,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 1050,
+                                                lineNumber: 1160,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                        lineNumber: 1043,
+                                        lineNumber: 1153,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 788,
+                                lineNumber: 869,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -2457,7 +2714,7 @@ function SowingForm() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 1093,
+                                            lineNumber: 1203,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2468,45 +2725,45 @@ function SowingForm() {
                                                 children: "Close"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                                lineNumber: 1097,
+                                                lineNumber: 1207,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                            lineNumber: 1096,
+                                            lineNumber: 1206,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                    lineNumber: 1092,
+                                    lineNumber: 1202,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                                lineNumber: 1091,
+                                lineNumber: 1201,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                    lineNumber: 754,
+                    lineNumber: 825,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/sowing-form.tsx",
-                lineNumber: 753,
+                lineNumber: 824,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/stage-forms/sowing-form.tsx",
-        lineNumber: 432,
+        lineNumber: 473,
         columnNumber: 5
     }, this);
 }
-_s(SowingForm, "KsGxqSLhurPPeuoF3UAZ/lT7nHA=");
+_s(SowingForm, "HEOJKQG99g8EG6TXCHaPwdipSDk=");
 _c = SowingForm;
 var _c;
 __turbopack_context__.k.register(_c, "SowingForm");

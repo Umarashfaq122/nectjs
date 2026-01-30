@@ -32,6 +32,11 @@ import {
   Filter,
   Calendar,
   BarChart,
+  Drill,
+  FlaskConical,
+  Shield,
+  Zap,
+  Droplet,
 } from "lucide-react";
 import {
   BarChart as RechartsBarChart,
@@ -69,9 +74,17 @@ interface SowingData {
   seed_rate?: string | number | null;
   wheat_variety?: string | null;
   method_of_sowing?: string[] | null;
-  basal_fertilizers_applied?: any[] | null;
+  basal_fertilizers_applied?: Array<{
+    fertilizer: string;
+    quantity: number;
+  }> | null;
   variety?: string[] | null;
   zone_ids?: string[] | null;
+  seed_treatment?: boolean;
+  seed_treatment_product?: string | null;
+  soil_conditioner?: boolean;
+  soil_conditioner_product?: string | null;
+  bio_stimulant?: string | null;
   [key: string]: any;
 }
 
@@ -460,6 +473,8 @@ export default function FarmAnalytics() {
     });
   }, [selectedStage, filteredData]);
 
+  /* ================= SOWING STAGE ADDITIONS ================= */
+
   /* -------- SOWING: Seed Rate by Zone -------- */
   const seedRateByZoneData = useMemo(() => {
     if (selectedStage !== "sowing") return [];
@@ -519,6 +534,170 @@ export default function FarmAnalytics() {
       .slice(0, 6)
       .map(([name, value], index) => ({
         name: name.length > 10 ? name.substring(0, 10) + "..." : name,
+        value,
+        color: PIE_COLORS[index % PIE_COLORS.length],
+        fullName: name,
+      }));
+  }, [selectedStage, filteredData]);
+
+  /* -------- SOWING: Fertilizer Types Distribution -------- */
+  const sowingFertilizerData = useMemo(() => {
+    if (selectedStage !== "sowing") return [];
+
+    const fertilizerMap: Record<string, number> = {};
+
+    filteredData.forEach((item: any) => {
+      if (
+        item.basal_fertilizers_applied &&
+        Array.isArray(item.basal_fertilizers_applied)
+      ) {
+        item.basal_fertilizers_applied.forEach((fert: any) => {
+          if (
+            fert &&
+            typeof fert === 'object' &&
+            fert.fertilizer &&
+            fert.fertilizer.toString().trim() !== ""
+          ) {
+            const fertilizerName = fert.fertilizer.toString().trim();
+            fertilizerMap[fertilizerName] = (fertilizerMap[fertilizerName] || 0) + 1;
+          }
+        });
+      }
+    });
+
+    console.log("Fertilizer Map:", fertilizerMap);
+
+    return Object.entries(fertilizerMap)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6)
+      .map(([name, value], index) => ({
+        name: name.length > 12 ? name.substring(0, 12) + "..." : name,
+        value,
+        color: PIE_COLORS[index % PIE_COLORS.length],
+        fullName: name,
+      }));
+  }, [selectedStage, filteredData]);
+
+  /* -------- SOWING: Sowing Methods Distribution -------- */
+  const sowingMethodsData = useMemo(() => {
+    if (selectedStage !== "sowing") return [];
+
+    const methodMap: Record<string, number> = {};
+
+    filteredData.forEach((item: any) => {
+      if (item.method_of_sowing && Array.isArray(item.method_of_sowing)) {
+        item.method_of_sowing.forEach((method: any) => {
+          if (method && typeof method === "string") {
+            const cleanMethod = method.trim();
+            if (cleanMethod) {
+              methodMap[cleanMethod] = (methodMap[cleanMethod] || 0) + 1;
+            }
+          }
+        });
+      }
+    });
+
+    console.log("Sowing Methods Map:", methodMap);
+
+    return Object.entries(methodMap)
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, value], index) => ({
+        name,
+        value,
+        color: PIE_COLORS[index % PIE_COLORS.length],
+      }));
+  }, [selectedStage, filteredData]);
+
+  /* -------- SOWING: Seed Treatment Stats -------- */
+  const seedTreatmentData = useMemo(() => {
+    if (selectedStage !== "sowing") return null;
+
+    let treated = 0;
+    let untreated = 0;
+    const productMap: Record<string, number> = {};
+
+    filteredData.forEach((item: any) => {
+      // Boolean value from API
+      if (item.seed_treatment === true) {
+        treated++;
+        if (item.seed_treatment_product && item.seed_treatment_product.toString().trim() !== "") {
+          const product = item.seed_treatment_product.toString().trim();
+          productMap[product] = (productMap[product] || 0) + 1;
+        }
+      } else {
+        untreated++;
+      }
+    });
+
+    const total = treated + untreated;
+
+    return {
+      treated,
+      untreated,
+      total,
+      treatedPercentage: total > 0 ? Math.round((treated / total) * 100) : 0,
+      untreatedPercentage: total > 0 ? Math.round((untreated / total) * 100) : 0,
+      products: Object.entries(productMap)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(([name, count]) => ({ name, count })),
+    };
+  }, [selectedStage, filteredData]);
+
+  /* -------- SOWING: Soil Conditioner Stats -------- */
+  const soilConditionerData = useMemo(() => {
+    if (selectedStage !== "sowing") return null;
+
+    let applied = 0;
+    let notApplied = 0;
+    const productMap: Record<string, number> = {};
+
+    filteredData.forEach((item: any) => {
+      // Boolean value from API
+      if (item.soil_conditioner === true) {
+        applied++;
+        if (item.soil_conditioner_product && item.soil_conditioner_product.toString().trim() !== "") {
+          const product = item.soil_conditioner_product.toString().trim();
+          productMap[product] = (productMap[product] || 0) + 1;
+        }
+      } else {
+        notApplied++;
+      }
+    });
+
+    const total = applied + notApplied;
+
+    return {
+      applied,
+      notApplied,
+      total,
+      appliedPercentage: total > 0 ? Math.round((applied / total) * 100) : 0,
+      notAppliedPercentage: total > 0 ? Math.round((notApplied / total) * 100) : 0,
+      products: Object.entries(productMap)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(([name, count]) => ({ name, count })),
+    };
+  }, [selectedStage, filteredData]);
+
+  /* -------- SOWING: Bio-Stimulant Stats -------- */
+  const bioStimulantData = useMemo(() => {
+    if (selectedStage !== "sowing") return [];
+
+    const stimulantMap: Record<string, number> = {};
+
+    filteredData.forEach((item: any) => {
+      if (item.bio_stimulant && item.bio_stimulant.toString().trim() !== "") {
+        const stimulant = item.bio_stimulant.toString().trim();
+        stimulantMap[stimulant] = (stimulantMap[stimulant] || 0) + 1;
+      }
+    });
+
+    return Object.entries(stimulantMap)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([name, value], index) => ({
+        name: name.length > 15 ? name.substring(0, 15) + "..." : name,
         value,
         color: PIE_COLORS[index % PIE_COLORS.length],
         fullName: name,
@@ -1028,7 +1207,7 @@ export default function FarmAnalytics() {
           </div>
         )}
 
-        {/* SOWING: Two Graphs */}
+        {/* SOWING: Four Graphs in 2x2 Grid */}
         {selectedStage === "sowing" && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Seed Rate by Zone */}
@@ -1043,45 +1222,52 @@ export default function FarmAnalytics() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="h-[400px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <RechartsBarChart data={seedRateByZoneData}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-                      <XAxis
-                        dataKey="name"
-                        fontSize={12}
-                        tickLine={false}
-                        axisLine={{ stroke: "#e2e8f0" }}
-                      />
-                      <YAxis
-                        fontSize={12}
-                        tickLine={false}
-                        axisLine={{ stroke: "#e2e8f0" }}
-                        label={{
-                          value: "Seed Rate (kg/acre)",
-                          angle: -90,
-                          position: "insideLeft",
-                          offset: 10,
-                          fontSize: 12,
-                        }}
-                      />
-                      <Tooltip
-                        contentStyle={{
-                          backgroundColor: "white",
-                          border: "1px solid #e2e8f0",
-                          borderRadius: "8px",
-                          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-                        }}
-                        formatter={(value) => [`${value} kg/acre`, "Seed Rate"]}
-                      />
-                      <Bar
-                        dataKey="value"
-                        name="Seed Rate"
-                        radius={[8, 8, 0, 0]}
-                        fill={COLORS.secondary}
-                      />
-                    </RechartsBarChart>
-                  </ResponsiveContainer>
+                <div className="h-[300px]">
+                  {seedRateByZoneData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <RechartsBarChart data={seedRateByZoneData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+                        <XAxis
+                          dataKey="name"
+                          fontSize={12}
+                          tickLine={false}
+                          axisLine={{ stroke: "#e2e8f0" }}
+                        />
+                        <YAxis
+                          fontSize={12}
+                          tickLine={false}
+                          axisLine={{ stroke: "#e2e8f0" }}
+                          label={{
+                            value: "Seed Rate (kg/acre)",
+                            angle: -90,
+                            position: "insideLeft",
+                            offset: 10,
+                            fontSize: 12,
+                          }}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: "white",
+                            border: "1px solid #e2e8f0",
+                            borderRadius: "8px",
+                            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                          }}
+                          formatter={(value) => [`${value} kg/acre`, "Seed Rate"]}
+                        />
+                        <Bar
+                          dataKey="value"
+                          name="Seed Rate"
+                          radius={[8, 8, 0, 0]}
+                          fill={COLORS.secondary}
+                        />
+                      </RechartsBarChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full flex flex-col items-center justify-center text-slate-500">
+                      <BarChart3 className="h-12 w-12 mb-3 text-slate-300" />
+                      <p>No seed rate data available</p>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -1098,41 +1284,378 @@ export default function FarmAnalytics() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="h-[400px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={wheatVarietyData}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={90}
-                        paddingAngle={2}
-                        label={(entry) => `${entry.name}: ${entry.value}`}
+                <div className="h-[300px]">
+                  {wheatVarietyData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={wheatVarietyData}
+                          dataKey="value"
+                          nameKey="name"
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={50}
+                          outerRadius={80}
+                          paddingAngle={2}
+                          label={(entry) => `${entry.name}: ${entry.value}`}
+                        >
+                          {wheatVarietyData.map((entry, index) => (
+                            <Cell
+                              key={index}
+                              fill={entry.color}
+                              stroke="#ffffff"
+                              strokeWidth={2}
+                            />
+                          ))}
+                        </Pie>
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: "white",
+                            border: "1px solid #e2e8f0",
+                            borderRadius: "8px",
+                            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                          }}
+                          formatter={(value, name) => [`${value} fields`, name]}
+                        />
+                        <Legend verticalAlign="bottom" height={36} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full flex flex-col items-center justify-center text-slate-500">
+                      <PieIcon className="h-12 w-12 mb-3 text-slate-300" />
+                      <p>No variety data available</p>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Sowing Methods */}
+            <Card className="border border-slate-200 shadow-sm">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <Drill className="h-5 w-5 text-purple-500" />
+                  Sowing Methods
+                </CardTitle>
+                <CardDescription className="mt-1">
+                  Distribution of sowing methods used
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="h-[300px]">
+                  {sowingMethodsData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <RechartsBarChart
+                        data={sowingMethodsData}
+                        layout="vertical"
                       >
-                        {wheatVarietyData.map((entry, index) => (
-                          <Cell
-                            key={index}
-                            fill={entry.color}
-                            stroke="#ffffff"
-                            strokeWidth={2}
-                          />
-                        ))}
-                      </Pie>
-                      <Tooltip
-                        contentStyle={{
-                          backgroundColor: "white",
-                          border: "1px solid #e2e8f0",
-                          borderRadius: "8px",
-                          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-                        }}
-                        formatter={(value, name) => [`${value} fields`, name]}
-                      />
-                      <Legend verticalAlign="bottom" height={36} />
-                    </PieChart>
-                  </ResponsiveContainer>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+                        <XAxis
+                          type="number"
+                          fontSize={12}
+                          tickLine={false}
+                          axisLine={{ stroke: "#e2e8f0" }}
+                          label={{
+                            value: "Number of Fields",
+                            position: "insideBottom",
+                            offset: -5,
+                            fontSize: 12,
+                          }}
+                        />
+                        <YAxis
+                          dataKey="name"
+                          type="category"
+                          fontSize={12}
+                          tickLine={false}
+                          axisLine={{ stroke: "#e2e8f0" }}
+                          width={100}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: "white",
+                            border: "1px solid #e2e8f0",
+                            borderRadius: "8px",
+                            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                          }}
+                          formatter={(value) => [`${value} fields`, "Count"]}
+                        />
+                        <Bar
+                          dataKey="value"
+                          name="Fields"
+                          radius={[0, 8, 8, 0]}
+                        >
+                          {sowingMethodsData.map((entry, index) => (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={entry.color}
+                            />
+                          ))}
+                        </Bar>
+                      </RechartsBarChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full flex flex-col items-center justify-center text-slate-500">
+                      <Drill className="h-12 w-12 mb-3 text-slate-300" />
+                      <p>No sowing method data available</p>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Fertilizer Types */}
+            <Card className="border border-slate-200 shadow-sm">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <FlaskConical className="h-5 w-5 text-amber-500" />
+                  Basal Fertilizers Used
+                </CardTitle>
+                <CardDescription className="mt-1">
+                  Most commonly used basal fertilizers
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="h-[300px]">
+                  {sowingFertilizerData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={sowingFertilizerData}
+                          dataKey="value"
+                          nameKey="name"
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={50}
+                          outerRadius={80}
+                          paddingAngle={2}
+                          label={(entry) => `${entry.name}: ${entry.value}`}
+                        >
+                          {sowingFertilizerData.map((entry, index) => (
+                            <Cell
+                              key={index}
+                              fill={entry.color}
+                              stroke="#ffffff"
+                              strokeWidth={2}
+                            />
+                          ))}
+                        </Pie>
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: "white",
+                            border: "1px solid #e2e8f0",
+                            borderRadius: "8px",
+                            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                          }}
+                          formatter={(value, name) => [`${value} fields`, name]}
+                        />
+                        <Legend verticalAlign="bottom" height={36} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full flex flex-col items-center justify-center text-slate-500">
+                      <FlaskConical className="h-12 w-12 mb-3 text-slate-300" />
+                      <p>No fertilizer data available</p>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Treatment Statistics */}
+            <Card className="border border-slate-200 shadow-sm lg:col-span-2">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-slate-800">
+                  <Shield className="h-5 w-5 text-blue-500" />
+                  Seed & Soil Treatment Statistics
+                </CardTitle>
+                <CardDescription className="mt-1">
+                  Seed treatment, soil conditioner, and bio-stimulant usage
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[300px]">
+                  {/* Seed Treatment */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-emerald-500" />
+                      <h4 className="font-medium">Seed Treatment</h4>
+                    </div>
+                    {seedTreatmentData ? (
+                      <>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span className="text-sm text-slate-600">Treated:</span>
+                            <span className="font-medium">
+                              {seedTreatmentData.treated} fields
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-sm text-slate-600">
+                              Not Treated:
+                            </span>
+                            <span className="font-medium">
+                              {seedTreatmentData.untreated} fields
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-200 rounded-full h-2 mt-2">
+                            <div
+                              className="bg-emerald-500 h-2 rounded-full"
+                              style={{
+                                width: `${seedTreatmentData.treatedPercentage}%`,
+                              }}
+                            />
+                          </div>
+                          <div className="text-center text-sm text-slate-600">
+                            {seedTreatmentData.treatedPercentage}% treated
+                          </div>
+                        </div>
+                        {seedTreatmentData.products.length > 0 && (
+                          <div className="mt-4">
+                            <p className="text-sm font-medium mb-2">
+                              Top Products:
+                            </p>
+                            <div className="space-y-1">
+                              {seedTreatmentData.products.map((product, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between text-sm"
+                                >
+                                  <span className="text-slate-600 truncate">
+                                    {product.name}
+                                  </span>
+                                  <span className="font-medium">
+                                    {product.count} fields
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="text-center text-slate-400 py-4">
+                        No seed treatment data
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Soil Conditioner */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Zap className="h-5 w-5 text-orange-500" />
+                      <h4 className="font-medium">Soil Conditioner</h4>
+                    </div>
+                    {soilConditionerData ? (
+                      <>
+                        <div className="space-y-2">
+                          <div className="flex justify-between">
+                            <span className="text-sm text-slate-600">Applied:</span>
+                            <span className="font-medium">
+                              {soilConditionerData.applied} fields
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-sm text-slate-600">
+                              Not Applied:
+                            </span>
+                            <span className="font-medium">
+                              {soilConditionerData.notApplied} fields
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-200 rounded-full h-2 mt-2">
+                            <div
+                              className="bg-orange-500 h-2 rounded-full"
+                              style={{
+                                width: `${soilConditionerData.appliedPercentage}%`,
+                              }}
+                            />
+                          </div>
+                          <div className="text-center text-sm text-slate-600">
+                            {soilConditionerData.appliedPercentage}% applied
+                          </div>
+                        </div>
+                        {soilConditionerData.products.length > 0 && (
+                          <div className="mt-4">
+                            <p className="text-sm font-medium mb-2">
+                              Top Products:
+                            </p>
+                            <div className="space-y-1">
+                              {soilConditionerData.products.map((product, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between text-sm"
+                                >
+                                  <span className="text-slate-600 truncate">
+                                    {product.name}
+                                  </span>
+                                  <span className="font-medium">
+                                    {product.count} fields
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="text-center text-slate-400 py-4">
+                        No soil conditioner data
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bio-Stimulant */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <Droplet className="h-5 w-5 text-purple-500" />
+                      <h4 className="font-medium">Bio-Stimulant</h4>
+                    </div>
+                    <div className="h-[180px]">
+                      {bioStimulantData.length > 0 ? (
+                        <ResponsiveContainer width="100%" height="100%">
+                          <PieChart>
+                            <Pie
+                              data={bioStimulantData}
+                              dataKey="value"
+                              nameKey="name"
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={30}
+                              outerRadius={60}
+                              paddingAngle={2}
+                            >
+                              {bioStimulantData.map((entry, index) => (
+                                <Cell
+                                  key={index}
+                                  fill={entry.color}
+                                  stroke="#ffffff"
+                                  strokeWidth={2}
+                                />
+                              ))}
+                            </Pie>
+                            <Tooltip
+                              contentStyle={{
+                                backgroundColor: "white",
+                                border: "1px solid #e2e8f0",
+                                borderRadius: "8px",
+                                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                              }}
+                              formatter={(value, name) => [
+                                `${value} fields`,
+                                name,
+                              ]}
+                            />
+                            <Legend verticalAlign="bottom" height={36} />
+                          </PieChart>
+                        </ResponsiveContainer>
+                      ) : (
+                        <div className="h-full flex flex-col items-center justify-center text-slate-500">
+                          <Droplet className="h-10 w-10 mb-2 text-slate-300" />
+                          <p className="text-sm">No bio-stimulant data</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -1308,7 +1831,6 @@ export default function FarmAnalytics() {
               </CardContent>
             </Card>
 
-            {/* Crop Health Distribution */}
             {/* Crop Health Distribution */}
             <Card className="border border-slate-200 shadow-sm">
               <CardHeader className="pb-3">

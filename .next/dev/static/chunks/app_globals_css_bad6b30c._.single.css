@@ -1237,6 +1237,14 @@
     height: 85vh;
   }
 
+  .h-\[180px\] {
+    height: 180px;
+  }
+
+  .h-\[300px\] {
+    height: 300px;
+  }
+
   .h-\[400px\] {
     height: 400px;
   }
@@ -2599,6 +2607,10 @@
     background-color: var(--color-orange-100);
   }
 
+  .bg-orange-500 {
+    background-color: var(--color-orange-500);
+  }
+
   .bg-popover {
     background-color: var(--popover);
   }
@@ -2753,6 +2765,10 @@
 
   .bg-slate-100 {
     background-color: var(--color-slate-100);
+  }
+
+  .bg-slate-200 {
+    background-color: var(--color-slate-200);
   }
 
   .bg-teal-50 {
