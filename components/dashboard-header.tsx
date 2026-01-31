@@ -44,17 +44,18 @@ export function DashboardHeader() {
   const router = useRouter();
   const currentDate = new Date();
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    const data = localStorage.getItem("userData");
+ useEffect(() => {
+  const token = localStorage.getItem("authToken");
+  const data = localStorage.getItem("userData");
 
-    if (token) {
-      setIsAuthenticated(true);
-      if (data) setUser(JSON.parse(data));
-    } else {
-      setIsAuthenticated(false);
-    }
-  }, []);
+  if (token) {
+    setIsAuthenticated(true);
+    if (data) setUser(JSON.parse(data));
+  } else {
+    setIsAuthenticated(false);
+    router.push("/"); // redirect to home/login
+  }
+}, [router]);
 
   function getSeasonInfo() {
     const month = currentDate.getMonth() + 1;
@@ -112,7 +113,7 @@ export function DashboardHeader() {
       setIsAuthenticated(false);
       setOpenUserModal(false);
       setOpenLogoutDialog(false);
-      router.push("/login");
+      router.push("/");
     } catch (error) {
       console.error("Logout error:", error);
     }

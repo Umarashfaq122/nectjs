@@ -439,7 +439,7 @@ function LoginPage() {
         setIsLoading(true);
         const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loginUser"])(email, password);
         if (result.success) {
-            router.push("/login"); // Only navigate on success
+            router.push("/main"); // Only navigate on success
         } else {
             setError(result.error || "Login failed");
         // DO NOT navigate on error - stay on login page
@@ -535,7 +535,7 @@ function LoginPage() {
                                             value: email,
                                             onChange: (e)=>setEmail(e.target.value),
                                             disabled: isLoading,
-                                            className: "bg-white/40 border-white/40 text-white placeholder-black/70"
+                                            className: "bg-white/40 border-white/40 text-black placeholder-black/70"
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 90,
@@ -567,7 +567,7 @@ function LoginPage() {
                                                     value: password,
                                                     onChange: (e)=>setPassword(e.target.value),
                                                     disabled: isLoading,
-                                                    className: "bg-white/40 border-white/40 text-white placeholder-black/70"
+                                                    className: "bg-white/40 border-white/40 text-black placeholder-black/70"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/page.tsx",
                                                     lineNumber: 104,

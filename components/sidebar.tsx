@@ -31,7 +31,7 @@ export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false)
 
 const navItems: NavItem[] = [
-  { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard', href: '/login' },
+  { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard', href: '/main' },
   { id: 'farms', icon: Map, label: 'Farms', href: '/farms' },
   { id: 'crops', icon: Leaf, label: 'Crops', href: '/crops' },
   { id: 'visits', icon: Users, label: 'Visits', href: '/visits' },

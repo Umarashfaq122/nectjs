@@ -53,6 +53,13 @@ export function FarmOverview() {
 
   const fetchAllFields = async (): Promise<Field[]> => {
   const token = localStorage.getItem("authToken");
+  
+ if (!token) {
+    console.error("No auth token found");
+    
+    return [];
+  }
+
 
   let url: string | null = "https://rda.ngrok.app/api/fields/";
   let allFields: Field[] = [];

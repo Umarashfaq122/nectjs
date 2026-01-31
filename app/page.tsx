@@ -33,7 +33,7 @@ export default function LoginPage() {
     const result = await loginUser(email, password);
 
     if (result.success) {
-      router.push("/login"); // Only navigate on success
+      router.push("/main"); // Only navigate on success
     } else {
       setError(result.error || "Login failed");
       // DO NOT navigate on error - stay on login page
@@ -93,7 +93,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
-                className="bg-white/40 border-white/40 text-white placeholder-black/70"
+                className="bg-white/40 border-white/40 text-black placeholder-black/70"
               />
             </div>
 
@@ -107,7 +107,7 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={isLoading}
-                  className="bg-white/40 border-white/40 text-white placeholder-black/70"
+                  className="bg-white/40 border-white/40 text-black placeholder-black/70"
                 />
 
                 <button

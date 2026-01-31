@@ -3576,6 +3576,10 @@
     color: var(--background);
   }
 
+  .text-black {
+    color: var(--color-black);
+  }
+
   .text-blue-400 {
     color: var(--color-blue-400);
   }
@@ -3969,16 +3973,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .placeholder-black\/70::placeholder {
       color: color-mix(in oklab, var(--color-black) 70%, transparent);
-    }
-  }
-
-  .placeholder-white\/70::placeholder {
-    color: #ffffffb3;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .placeholder-white\/70::placeholder {
-      color: color-mix(in oklab, var(--color-white) 70%, transparent);
     }
   }
 
