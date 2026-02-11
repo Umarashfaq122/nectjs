@@ -252,7 +252,7 @@ export function DashboardHeader() {
                         Full Name
                       </label>
                       <div className="rounded-lg border bg-card px-4 py-3">
-                        <p className="font-medium">
+                        <p className="text-sm">
                           {user.firstName} {user.lastName}
                         </p>
                       </div>
@@ -263,7 +263,7 @@ export function DashboardHeader() {
                         Email Address
                       </label>
                       <div className="rounded-lg border bg-card px-4 py-3">
-                        <p className="font-medium">{user.email}</p>
+                        <p className="text-sm">{user.email}</p>
                       </div>
                     </div>
 

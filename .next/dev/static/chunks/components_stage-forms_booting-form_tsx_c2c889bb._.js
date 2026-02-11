@@ -83,7 +83,14 @@ function BootingForm() {
                     pest_data: farm.pest_data || null,
                     fertilizer_data: farm.fertilizer_data || null,
                     irrigation_data: farm.irrigation_data || null,
-                    yellowing_data: farm.yellowing_data || null
+                    yellowing_data: farm.yellowing_data || null,
+                    crop_height: farm.crop_height || null,
+                    crop_uniformity: farm.crop_uniformity || null,
+                    flag_leaf_status: farm.flag_leaf_status || null,
+                    soil_moisture_condition: farm.soil_moisture_condition || null,
+                    spike_status: farm.spike_status || null,
+                    weeds_in_field: farm.weeds_in_field || null,
+                    lodging_status: farm.lodging_status || null
                 }));
             setFarmData(normalized);
             setFilteredFarms(normalized);
@@ -132,32 +139,33 @@ function BootingForm() {
             className: "h-4 w-4 text-emerald-600"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 190,
+            lineNumber: 197,
             columnNumber: 40
         }, this);
         if (status === 'good') return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sprout$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sprout$3e$__["Sprout"], {
             className: "h-4 w-4 text-green-600"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 191,
+            lineNumber: 198,
             columnNumber: 35
         }, this);
         if (status === 'fair') return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wheat$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wheat$3e$__["Wheat"], {
             className: "h-4 w-4 text-yellow-600"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 192,
+            lineNumber: 199,
             columnNumber: 35
         }, this);
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
             className: "h-4 w-4 text-red-600"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 193,
+            lineNumber: 200,
             columnNumber: 12
         }, this);
     };
     const getWeedsStatusColor = (status)=>{
+        if (!status) return 'bg-gray-100';
         if (status.includes('100%')) return 'bg-green-100 text-green-800';
         if (status.includes('weeds_free')) return 'bg-green-100 text-green-800';
         if (status.includes('few')) return 'bg-yellow-100 text-yellow-800';
@@ -165,7 +173,12 @@ function BootingForm() {
         return 'bg-gray-100';
     };
     const formatCropHeight = (height)=>{
+        if (!height) return 'N/A';
         return height.replace('_', ' ').replace('feet', 'ft');
+    };
+    const formatString = (str)=>{
+        if (!str) return 'N/A';
+        return str.replace(/_/g, ' ');
     };
     const hasIssues = (farm)=>{
         return farm.crop_health === 'poor' || farm.crop_health === 'fair' || (farm.yellowing_data?.causes?.length || 0) > 0 || farm.pest_data !== null || farm.disease_data !== null;
@@ -175,7 +188,7 @@ function BootingForm() {
             className: "h-64 w-full"
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 221,
+            lineNumber: 235,
             columnNumber: 12
         }, this);
     }
@@ -188,14 +201,14 @@ function BootingForm() {
                         className: "mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 228,
+                        lineNumber: 242,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 229,
+                        lineNumber: 243,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -204,18 +217,18 @@ function BootingForm() {
                         children: "Retry"
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 230,
+                        lineNumber: 244,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 227,
+                lineNumber: 241,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/stage-forms/booting-form.tsx",
-            lineNumber: 226,
+            lineNumber: 240,
             columnNumber: 7
         }, this);
     }
@@ -230,7 +243,7 @@ function BootingForm() {
                         children: "Booting Stage Monitoring"
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 239,
+                        lineNumber: 253,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -239,13 +252,13 @@ function BootingForm() {
                         children: "Refresh"
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 240,
+                        lineNumber: 254,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 238,
+                lineNumber: 252,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -258,7 +271,7 @@ function BootingForm() {
                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 248,
+                                lineNumber: 262,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -268,13 +281,13 @@ function BootingForm() {
                                 className: "pl-10"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 249,
+                                lineNumber: 263,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 247,
+                        lineNumber: 261,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -287,7 +300,7 @@ function BootingForm() {
                                     children: "All Farms"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 259,
+                                    lineNumber: 273,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -295,7 +308,7 @@ function BootingForm() {
                                     children: "Excellent"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 274,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -303,7 +316,7 @@ function BootingForm() {
                                     children: "Good"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 261,
+                                    lineNumber: 275,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -311,7 +324,7 @@ function BootingForm() {
                                     children: "Fair"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 262,
+                                    lineNumber: 276,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -319,7 +332,7 @@ function BootingForm() {
                                     children: "Poor"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 263,
+                                    lineNumber: 277,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -327,24 +340,24 @@ function BootingForm() {
                                     children: "Issues"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 278,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 258,
+                            lineNumber: 272,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 257,
+                        lineNumber: 271,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 246,
+                lineNumber: 260,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -363,7 +376,7 @@ function BootingForm() {
                                                 children: "Total Farms"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 275,
+                                                lineNumber: 289,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -371,36 +384,36 @@ function BootingForm() {
                                                 children: farmData.length
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 290,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 274,
+                                        lineNumber: 288,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wheat$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wheat$3e$__["Wheat"], {
                                         className: "h-8 w-8 text-green-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 278,
+                                        lineNumber: 292,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 273,
+                                lineNumber: 287,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 272,
+                            lineNumber: 286,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 271,
+                        lineNumber: 285,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -416,7 +429,7 @@ function BootingForm() {
                                                 children: "With Pests"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 300,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -424,36 +437,36 @@ function BootingForm() {
                                                 children: farmData.filter((f)=>f.pest_data).length
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 287,
+                                                lineNumber: 301,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 299,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bug$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bug$3e$__["Bug"], {
                                         className: "h-8 w-8 text-red-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 291,
+                                        lineNumber: 305,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 284,
+                                lineNumber: 298,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 283,
+                            lineNumber: 297,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 282,
+                        lineNumber: 296,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -469,7 +482,7 @@ function BootingForm() {
                                                 children: "With Diseases"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 299,
+                                                lineNumber: 313,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -477,36 +490,36 @@ function BootingForm() {
                                                 children: farmData.filter((f)=>f.disease_data).length
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 300,
+                                                lineNumber: 314,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 298,
+                                        lineNumber: 312,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$skull$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Skull$3e$__["Skull"], {
                                         className: "h-8 w-8 text-orange-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 318,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 297,
+                                lineNumber: 311,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 296,
+                            lineNumber: 310,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 295,
+                        lineNumber: 309,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -522,7 +535,7 @@ function BootingForm() {
                                                 children: "Yellowing Issues"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 312,
+                                                lineNumber: 326,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -530,42 +543,42 @@ function BootingForm() {
                                                 children: farmData.filter((f)=>f.yellowing_data?.causes?.length).length
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 313,
+                                                lineNumber: 327,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 311,
+                                        lineNumber: 325,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                         className: "h-8 w-8 text-yellow-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 317,
+                                        lineNumber: 331,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 310,
+                                lineNumber: 324,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 309,
+                            lineNumber: 323,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 308,
+                        lineNumber: 322,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 270,
+                lineNumber: 284,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -588,7 +601,7 @@ function BootingForm() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 330,
+                                                    lineNumber: 344,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -600,13 +613,13 @@ function BootingForm() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 331,
+                                                    lineNumber: 345,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 329,
+                                            lineNumber: 343,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -619,23 +632,23 @@ function BootingForm() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 336,
+                                                lineNumber: 350,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 335,
+                                            lineNumber: 349,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 328,
+                                    lineNumber: 342,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 343,
+                                    lineNumber: 357,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -651,14 +664,14 @@ function BootingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 348,
+                                                            lineNumber: 362,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Crop Height"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 347,
+                                                    lineNumber: 361,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -666,13 +679,13 @@ function BootingForm() {
                                                     children: formatCropHeight(farm.crop_height)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 351,
+                                                    lineNumber: 365,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 346,
+                                            lineNumber: 360,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -685,28 +698,28 @@ function BootingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 356,
+                                                            lineNumber: 370,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Uniformity"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 355,
+                                                    lineNumber: 369,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-medium",
-                                                    children: farm.crop_uniformity.replace('_', ' ')
+                                                    children: formatString(farm.crop_uniformity)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 359,
+                                                    lineNumber: 373,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 354,
+                                            lineNumber: 368,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,29 +732,29 @@ function BootingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 366,
+                                                            lineNumber: 380,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Soil Moisture"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 365,
+                                                    lineNumber: 379,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                     variant: "outline",
                                                     className: "capitalize",
-                                                    children: farm.soil_moisture_condition
+                                                    children: formatString(farm.soil_moisture_condition)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 383,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 364,
+                                            lineNumber: 378,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -754,34 +767,34 @@ function BootingForm() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 376,
+                                                            lineNumber: 390,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Weeds"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 375,
+                                                    lineNumber: 389,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                     className: getWeedsStatusColor(farm.weeds_in_field),
-                                                    children: farm.weeds_in_field.replace(/_/g, ' ')
+                                                    children: formatString(farm.weeds_in_field)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 379,
+                                                    lineNumber: 393,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 374,
+                                            lineNumber: 388,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 345,
+                                    lineNumber: 359,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -797,14 +810,14 @@ function BootingForm() {
                                                         className: "h-3 w-3 mr-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 390,
+                                                        lineNumber: 404,
                                                         columnNumber: 23
                                                     }, this),
-                                                    farm.pest_data.pest.replace('_', ' ')
+                                                    formatString(farm.pest_data.pest)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 389,
+                                                lineNumber: 403,
                                                 columnNumber: 21
                                             }, this),
                                             farm.disease_data && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -815,14 +828,14 @@ function BootingForm() {
                                                         className: "h-3 w-3 mr-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 396,
+                                                        lineNumber: 410,
                                                         columnNumber: 23
                                                     }, this),
-                                                    farm.disease_data.disease.replace('_', ' ')
+                                                    formatString(farm.disease_data.disease)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 395,
+                                                lineNumber: 409,
                                                 columnNumber: 21
                                             }, this),
                                             farm.fertilizer_data?.fertilizers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -833,7 +846,7 @@ function BootingForm() {
                                                         className: "h-3 w-3 mr-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 402,
+                                                        lineNumber: 416,
                                                         columnNumber: 23
                                                     }, this),
                                                     farm.fertilizer_data.fertilizers.length,
@@ -841,27 +854,27 @@ function BootingForm() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 401,
+                                                lineNumber: 415,
                                                 columnNumber: 21
                                             }, this),
                                             farm.yellowing_data?.causes?.map((cause, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                     variant: "outline",
                                                     className: "text-yellow-600",
-                                                    children: cause.replace('_', ' ')
+                                                    children: formatString(cause)
                                                 }, i, false, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 407,
+                                                    lineNumber: 421,
                                                     columnNumber: 21
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 387,
+                                        lineNumber: 401,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 386,
+                                    lineNumber: 400,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -876,30 +889,30 @@ function BootingForm() {
                                             className: "mr-2 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                            lineNumber: 422,
+                                            lineNumber: 436,
                                             columnNumber: 17
                                         }, this),
                                         " View Full Details"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 414,
+                                    lineNumber: 428,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                            lineNumber: 327,
+                            lineNumber: 341,
                             columnNumber: 13
                         }, this)
                     }, farm.id, false, {
                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                        lineNumber: 326,
+                        lineNumber: 340,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 324,
+                lineNumber: 338,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -918,7 +931,7 @@ function BootingForm() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 436,
+                                                lineNumber: 450,
                                                 columnNumber: 19
                                             }, this),
                                             "Farm #",
@@ -927,7 +940,7 @@ function BootingForm() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 435,
+                                        lineNumber: 449,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -938,13 +951,13 @@ function BootingForm() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 439,
+                                        lineNumber: 453,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 434,
+                                lineNumber: 448,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -960,19 +973,19 @@ function BootingForm() {
                                                             className: "h-5 w-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 449,
+                                                            lineNumber: 463,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Crop Health & Status"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 448,
+                                                    lineNumber: 462,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 447,
+                                                lineNumber: 461,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -985,7 +998,7 @@ function BootingForm() {
                                                                 children: "Overall Health"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 455,
+                                                                lineNumber: 469,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -996,7 +1009,7 @@ function BootingForm() {
                                                                         children: selectedFarm.crop_health.toUpperCase()
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 457,
+                                                                        lineNumber: 471,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Progress"], {
@@ -1004,19 +1017,19 @@ function BootingForm() {
                                                                         className: "w-full"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 460,
+                                                                        lineNumber: 474,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 456,
+                                                                lineNumber: 470,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 454,
+                                                        lineNumber: 468,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1028,7 +1041,7 @@ function BootingForm() {
                                                                         children: "Crop Height"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 473,
+                                                                        lineNumber: 487,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1036,13 +1049,13 @@ function BootingForm() {
                                                                         children: formatCropHeight(selectedFarm.crop_height)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 474,
+                                                                        lineNumber: 488,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 472,
+                                                                lineNumber: 486,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1051,27 +1064,27 @@ function BootingForm() {
                                                                         children: "Uniformity"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 477,
+                                                                        lineNumber: 491,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "font-medium capitalize",
-                                                                        children: selectedFarm.crop_uniformity.replace('_', ' ')
+                                                                        children: formatString(selectedFarm.crop_uniformity)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 478,
+                                                                        lineNumber: 492,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 476,
+                                                                lineNumber: 490,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 471,
+                                                        lineNumber: 485,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1083,21 +1096,21 @@ function BootingForm() {
                                                                         children: "Flag Leaf Status"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 486,
+                                                                        lineNumber: 500,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "font-medium capitalize",
-                                                                        children: selectedFarm.flag_leaf_status.replace('_', ' ')
+                                                                        children: formatString(selectedFarm.flag_leaf_status)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 487,
+                                                                        lineNumber: 501,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 485,
+                                                                lineNumber: 499,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1106,27 +1119,27 @@ function BootingForm() {
                                                                         children: "Spike Status"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 492,
+                                                                        lineNumber: 506,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "font-medium capitalize",
-                                                                        children: selectedFarm.spike_status.replace('_', ' ')
+                                                                        children: formatString(selectedFarm.spike_status)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 493,
+                                                                        lineNumber: 507,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 491,
+                                                                lineNumber: 505,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 484,
+                                                        lineNumber: 498,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1135,33 +1148,33 @@ function BootingForm() {
                                                                 children: "Weeds in Field"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 500,
+                                                                lineNumber: 514,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                                 className: getWeedsStatusColor(selectedFarm.weeds_in_field),
-                                                                children: selectedFarm.weeds_in_field.replace(/_/g, ' ')
+                                                                children: formatString(selectedFarm.weeds_in_field)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 501,
+                                                                lineNumber: 515,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 499,
+                                                        lineNumber: 513,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 453,
+                                                lineNumber: 467,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 446,
+                                        lineNumber: 460,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1174,19 +1187,19 @@ function BootingForm() {
                                                             className: "h-5 w-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 512,
+                                                            lineNumber: 526,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Environmental Conditions"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 511,
+                                                    lineNumber: 525,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 510,
+                                                lineNumber: 524,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1198,7 +1211,7 @@ function BootingForm() {
                                                                 children: "Soil Moisture Condition"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 518,
+                                                                lineNumber: 532,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1208,27 +1221,27 @@ function BootingForm() {
                                                                         className: "h-4 w-4 text-blue-500"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 520,
+                                                                        lineNumber: 534,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "font-medium capitalize",
-                                                                        children: selectedFarm.soil_moisture_condition
+                                                                        children: formatString(selectedFarm.soil_moisture_condition)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 521,
+                                                                        lineNumber: 535,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 519,
+                                                                lineNumber: 533,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 517,
+                                                        lineNumber: 531,
                                                         columnNumber: 21
                                                     }, this),
                                                     selectedFarm.irrigation_data && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1238,7 +1251,7 @@ function BootingForm() {
                                                                 children: "Irrigation Details"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 527,
+                                                                lineNumber: 541,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1251,7 +1264,7 @@ function BootingForm() {
                                                                                 children: "Irrigation #"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 530,
+                                                                                lineNumber: 544,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1259,13 +1272,13 @@ function BootingForm() {
                                                                                 children: selectedFarm.irrigation_data.irrigation_number
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 531,
+                                                                                lineNumber: 545,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 529,
+                                                                        lineNumber: 543,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1275,7 +1288,7 @@ function BootingForm() {
                                                                                 children: "Days Between"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 534,
+                                                                                lineNumber: 548,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1283,25 +1296,25 @@ function BootingForm() {
                                                                                 children: selectedFarm.irrigation_data.days_between_irrigation
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 535,
+                                                                                lineNumber: 549,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 533,
+                                                                        lineNumber: 547,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 528,
+                                                                lineNumber: 542,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 526,
+                                                        lineNumber: 540,
                                                         columnNumber: 23
                                                     }, this),
                                                     selectedFarm.fertilizer_data?.fertilizers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1310,7 +1323,7 @@ function BootingForm() {
                                                                 children: "Fertilizers Applied"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 543,
+                                                                lineNumber: 557,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1323,7 +1336,7 @@ function BootingForm() {
                                                                                 children: fertilizer.product
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 547,
+                                                                                lineNumber: 561,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1331,36 +1344,36 @@ function BootingForm() {
                                                                                 children: fertilizer.quantity
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                lineNumber: 548,
+                                                                                lineNumber: 562,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, i, true, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 546,
+                                                                        lineNumber: 560,
                                                                         columnNumber: 29
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 544,
+                                                                lineNumber: 558,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 542,
+                                                        lineNumber: 556,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 516,
+                                                lineNumber: 530,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 509,
+                                        lineNumber: 523,
                                         columnNumber: 17
                                     }, this),
                                     (selectedFarm.pest_data || selectedFarm.disease_data) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1374,19 +1387,19 @@ function BootingForm() {
                                                             className: "h-5 w-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 562,
+                                                            lineNumber: 576,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Pest & Disease Management"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 561,
+                                                    lineNumber: 575,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 560,
+                                                lineNumber: 574,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1403,14 +1416,14 @@ function BootingForm() {
                                                                             className: "h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 571,
+                                                                            lineNumber: 585,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         "Pest Detected"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                    lineNumber: 570,
+                                                                    lineNumber: 584,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1423,21 +1436,21 @@ function BootingForm() {
                                                                                     children: "Pest Type"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 576,
+                                                                                    lineNumber: 590,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                                     className: "font-medium capitalize",
-                                                                                    children: selectedFarm.pest_data.pest.replace('_', ' ')
+                                                                                    children: formatString(selectedFarm.pest_data.pest)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 577,
+                                                                                    lineNumber: 591,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 575,
+                                                                            lineNumber: 589,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1447,7 +1460,7 @@ function BootingForm() {
                                                                                     children: "Days Since Detection"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 582,
+                                                                                    lineNumber: 596,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1455,13 +1468,13 @@ function BootingForm() {
                                                                                     children: selectedFarm.pest_data.days
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 583,
+                                                                                    lineNumber: 597,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 581,
+                                                                            lineNumber: 595,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1471,7 +1484,7 @@ function BootingForm() {
                                                                                     children: "Pesticide Applied"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 586,
+                                                                                    lineNumber: 600,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1479,13 +1492,13 @@ function BootingForm() {
                                                                                     children: selectedFarm.pest_data.pesticide_applied
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 587,
+                                                                                    lineNumber: 601,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 585,
+                                                                            lineNumber: 599,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         selectedFarm.pest_data.product && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1495,7 +1508,7 @@ function BootingForm() {
                                                                                     children: "Product Used"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 593,
+                                                                                    lineNumber: 607,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1503,25 +1516,25 @@ function BootingForm() {
                                                                                     children: selectedFarm.pest_data.product
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 594,
+                                                                                    lineNumber: 608,
                                                                                     columnNumber: 35
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 592,
+                                                                            lineNumber: 606,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                    lineNumber: 574,
+                                                                    lineNumber: 588,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 569,
+                                                            lineNumber: 583,
                                                             columnNumber: 27
                                                         }, this),
                                                         selectedFarm.disease_data && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1534,14 +1547,14 @@ function BootingForm() {
                                                                             className: "h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 604,
+                                                                            lineNumber: 618,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         "Disease Detected"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                    lineNumber: 603,
+                                                                    lineNumber: 617,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1554,21 +1567,21 @@ function BootingForm() {
                                                                                     children: "Disease Type"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 609,
+                                                                                    lineNumber: 623,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                                     className: "font-medium capitalize",
-                                                                                    children: selectedFarm.disease_data.disease.replace('_', ' ')
+                                                                                    children: formatString(selectedFarm.disease_data.disease)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 610,
+                                                                                    lineNumber: 624,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 608,
+                                                                            lineNumber: 622,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1578,7 +1591,7 @@ function BootingForm() {
                                                                                     children: "Days Since Detection"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 615,
+                                                                                    lineNumber: 629,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1586,13 +1599,13 @@ function BootingForm() {
                                                                                     children: selectedFarm.disease_data.days
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 616,
+                                                                                    lineNumber: 630,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 614,
+                                                                            lineNumber: 628,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1602,7 +1615,7 @@ function BootingForm() {
                                                                                     children: "Treatment Applied"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 619,
+                                                                                    lineNumber: 633,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1610,13 +1623,13 @@ function BootingForm() {
                                                                                     children: selectedFarm.disease_data.pesticide_applied
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 620,
+                                                                                    lineNumber: 634,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 618,
+                                                                            lineNumber: 632,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         selectedFarm.disease_data.product && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1626,7 +1639,7 @@ function BootingForm() {
                                                                                     children: "Product Used"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 626,
+                                                                                    lineNumber: 640,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1634,42 +1647,42 @@ function BootingForm() {
                                                                                     children: selectedFarm.disease_data.product
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                                    lineNumber: 627,
+                                                                                    lineNumber: 641,
                                                                                     columnNumber: 35
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                            lineNumber: 625,
+                                                                            lineNumber: 639,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                    lineNumber: 607,
+                                                                    lineNumber: 621,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 602,
+                                                            lineNumber: 616,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 567,
+                                                    lineNumber: 581,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 566,
+                                                lineNumber: 580,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 559,
+                                        lineNumber: 573,
                                         columnNumber: 19
                                     }, this),
                                     selectedFarm.yellowing_data && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1683,19 +1696,19 @@ function BootingForm() {
                                                             className: "h-5 w-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                            lineNumber: 643,
+                                                            lineNumber: 657,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Yellowing Issues"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                    lineNumber: 642,
+                                                    lineNumber: 656,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 641,
+                                                lineNumber: 655,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1707,7 +1720,7 @@ function BootingForm() {
                                                                 children: "Affected Zone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 649,
+                                                                lineNumber: 663,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1715,13 +1728,13 @@ function BootingForm() {
                                                                 children: selectedFarm.yellowing_data.zone_ids
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 650,
+                                                                lineNumber: 664,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 648,
+                                                        lineNumber: 662,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1730,7 +1743,7 @@ function BootingForm() {
                                                                 children: "Potential Causes"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 653,
+                                                                lineNumber: 667,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1738,39 +1751,39 @@ function BootingForm() {
                                                                 children: selectedFarm.yellowing_data.causes.map((cause, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                                         variant: "outline",
                                                                         className: "text-yellow-700 bg-yellow-50",
-                                                                        children: cause.replace('_', ' ')
+                                                                        children: formatString(cause)
                                                                     }, i, false, {
                                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                        lineNumber: 656,
+                                                                        lineNumber: 670,
                                                                         columnNumber: 29
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                                lineNumber: 654,
+                                                                lineNumber: 668,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                        lineNumber: 652,
+                                                        lineNumber: 666,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                                lineNumber: 647,
+                                                lineNumber: 661,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                        lineNumber: 640,
+                                        lineNumber: 654,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 444,
+                                lineNumber: 458,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -1779,30 +1792,30 @@ function BootingForm() {
                                     children: "Close"
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                    lineNumber: 668,
+                                    lineNumber: 682,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                                lineNumber: 667,
+                                lineNumber: 681,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/booting-form.tsx",
-                    lineNumber: 431,
+                    lineNumber: 445,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/booting-form.tsx",
-                lineNumber: 430,
+                lineNumber: 444,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/stage-forms/booting-form.tsx",
-        lineNumber: 237,
+        lineNumber: 251,
         columnNumber: 5
     }, this);
 }

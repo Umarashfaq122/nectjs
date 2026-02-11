@@ -64,8 +64,8 @@ export interface FarmData {
   farm_name: string
   farmer_name: string
   crop_health: 'excellent' | 'good' | 'fair' | 'poor'
-  crop_height: string
-  crop_uniformity: 'uniform' | 'slightly_uneven' | 'uneven'
+  crop_height: string | null
+  crop_uniformity: 'uniform' | 'slightly_uneven' | 'uneven' | null
   
   disease_data?: DiseaseData | null
   pest_data?: PestData | null
@@ -73,11 +73,11 @@ export interface FarmData {
   irrigation_data?: IrrigationData | null
   yellowing_data?: YellowingData | null
   
-  flag_leaf_status: string
+  flag_leaf_status: string | null
   lodging_status: string | null
-  soil_moisture_condition: string
-  spike_status: string
-  weeds_in_field: string
+  soil_moisture_condition: string | null
+  spike_status: string | null
+  weeds_in_field: string | null
 }
 
 /* ===================== COMPONENT ===================== */
@@ -134,6 +134,13 @@ export function BootingForm() {
         fertilizer_data: farm.fertilizer_data || null,
         irrigation_data: farm.irrigation_data || null,
         yellowing_data: farm.yellowing_data || null,
+        crop_height: farm.crop_height || null,
+        crop_uniformity: farm.crop_uniformity || null,
+        flag_leaf_status: farm.flag_leaf_status || null,
+        soil_moisture_condition: farm.soil_moisture_condition || null,
+        spike_status: farm.spike_status || null,
+        weeds_in_field: farm.weeds_in_field || null,
+        lodging_status: farm.lodging_status || null,
       }))
 
       setFarmData(normalized)
@@ -193,7 +200,8 @@ export function BootingForm() {
     return <AlertCircle className="h-4 w-4 text-red-600" />
   }
 
-  const getWeedsStatusColor = (status: string) => {
+  const getWeedsStatusColor = (status: string | null) => {
+    if (!status) return 'bg-gray-100'
     if (status.includes('100%')) return 'bg-green-100 text-green-800'
     if (status.includes('weeds_free')) return 'bg-green-100 text-green-800'
     if (status.includes('few')) return 'bg-yellow-100 text-yellow-800'
@@ -201,8 +209,14 @@ export function BootingForm() {
     return 'bg-gray-100'
   }
 
-  const formatCropHeight = (height: string) => {
+  const formatCropHeight = (height: string | null) => {
+    if (!height) return 'N/A'
     return height.replace('_', ' ').replace('feet', 'ft')
+  }
+
+  const formatString = (str: string | null) => {
+    if (!str) return 'N/A'
+    return str.replace(/_/g, ' ')
   }
 
   const hasIssues = (farm: FarmData) => {
@@ -357,7 +371,7 @@ export function BootingForm() {
                     Uniformity
                   </span>
                   <span className="font-medium">
-                    {farm.crop_uniformity.replace('_', ' ')}
+                    {formatString(farm.crop_uniformity)}
                   </span>
                 </div>
 
@@ -367,7 +381,7 @@ export function BootingForm() {
                     Soil Moisture
                   </span>
                   <Badge variant="outline" className="capitalize">
-                    {farm.soil_moisture_condition}
+                    {formatString(farm.soil_moisture_condition)}
                   </Badge>
                 </div>
 
@@ -377,7 +391,7 @@ export function BootingForm() {
                     Weeds
                   </span>
                   <Badge className={getWeedsStatusColor(farm.weeds_in_field)}>
-                    {farm.weeds_in_field.replace(/_/g, ' ')}
+                    {formatString(farm.weeds_in_field)}
                   </Badge>
                 </div>
               </div>
@@ -388,13 +402,13 @@ export function BootingForm() {
                   {farm.pest_data && (
                     <Badge variant="outline" className="text-red-600">
                       <Bug className="h-3 w-3 mr-1" />
-                      {farm.pest_data.pest.replace('_', ' ')}
+                      {formatString(farm.pest_data.pest)}
                     </Badge>
                   )}
                   {farm.disease_data && (
                     <Badge variant="outline" className="text-orange-600">
                       <Skull className="h-3 w-3 mr-1" />
-                      {farm.disease_data.disease.replace('_', ' ')}
+                      {formatString(farm.disease_data.disease)}
                     </Badge>
                   )}
                   {farm.fertilizer_data?.fertilizers && (
@@ -405,7 +419,7 @@ export function BootingForm() {
                   )}
                   {farm.yellowing_data?.causes?.map((cause, i) => (
                     <Badge key={i} variant="outline" className="text-yellow-600">
-                      {cause.replace('_', ' ')}
+                      {formatString(cause)}
                     </Badge>
                   ))}
                 </div>
@@ -476,7 +490,7 @@ export function BootingForm() {
                       <div>
                         <Label>Uniformity</Label>
                         <p className="font-medium capitalize">
-                          {selectedFarm.crop_uniformity.replace('_', ' ')}
+                          {formatString(selectedFarm.crop_uniformity)}
                         </p>
                       </div>
                     </div>
@@ -485,13 +499,13 @@ export function BootingForm() {
                       <div>
                         <Label>Flag Leaf Status</Label>
                         <p className="font-medium capitalize">
-                          {selectedFarm.flag_leaf_status.replace('_', ' ')}
+                          {formatString(selectedFarm.flag_leaf_status)}
                         </p>
                       </div>
                       <div>
                         <Label>Spike Status</Label>
                         <p className="font-medium capitalize">
-                          {selectedFarm.spike_status.replace('_', ' ')}
+                          {formatString(selectedFarm.spike_status)}
                         </p>
                       </div>
                     </div>
@@ -499,7 +513,7 @@ export function BootingForm() {
                     <div>
                       <Label>Weeds in Field</Label>
                       <Badge className={getWeedsStatusColor(selectedFarm.weeds_in_field)}>
-                        {selectedFarm.weeds_in_field.replace(/_/g, ' ')}
+                        {formatString(selectedFarm.weeds_in_field)}
                       </Badge>
                     </div>
                   </CardContent>
@@ -518,7 +532,7 @@ export function BootingForm() {
                       <Label>Soil Moisture Condition</Label>
                       <div className="flex items-center gap-2 mt-1">
                         <Droplet className="h-4 w-4 text-blue-500" />
-                        <p className="font-medium capitalize">{selectedFarm.soil_moisture_condition}</p>
+                        <p className="font-medium capitalize">{formatString(selectedFarm.soil_moisture_condition)}</p>
                       </div>
                     </div>
 
@@ -575,7 +589,7 @@ export function BootingForm() {
                               <div>
                                 <p className="text-sm text-gray-500">Pest Type</p>
                                 <p className="font-medium capitalize">
-                                  {selectedFarm.pest_data.pest.replace('_', ' ')}
+                                  {formatString(selectedFarm.pest_data.pest)}
                                 </p>
                               </div>
                               <div>
@@ -608,7 +622,7 @@ export function BootingForm() {
                               <div>
                                 <p className="text-sm text-gray-500">Disease Type</p>
                                 <p className="font-medium capitalize">
-                                  {selectedFarm.disease_data.disease.replace('_', ' ')}
+                                  {formatString(selectedFarm.disease_data.disease)}
                                 </p>
                               </div>
                               <div>
@@ -654,7 +668,7 @@ export function BootingForm() {
                         <div className="flex flex-wrap gap-2 mt-2">
                           {selectedFarm.yellowing_data.causes.map((cause, i) => (
                             <Badge key={i} variant="outline" className="text-yellow-700 bg-yellow-50">
-                              {cause.replace('_', ' ')}
+                              {formatString(cause)}
                             </Badge>
                           ))}
                         </div>
