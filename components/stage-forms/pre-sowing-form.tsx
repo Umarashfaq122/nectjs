@@ -469,7 +469,7 @@ export function PreSowingForm() {
                   <div className="bg-slate-50 rounded-lg p-2">
                     <p className="text-xs text-slate-500 mb-1">Avg Yield</p>
                     <p className="text-sm font-medium">
-                      {record.average_yield} units
+                      {record.average_yield} Mods per acre
                     </p>
                   </div>
                 )}
@@ -629,7 +629,7 @@ export function PreSowingForm() {
             
             <div className="text-right">
               <p className="text-sm font-medium text-slate-900">
-                {record.average_yield ? `${record.average_yield} units` : "N/A"}
+                {record.average_yield ? `${record.average_yield} Mds/acre` : "N/A"}
               </p>
               <p className="text-xs text-slate-500">Yield</p>
             </div>
@@ -827,7 +827,7 @@ export function PreSowingForm() {
                   <div>
                     <Label className="text-sm font-medium mb-2">Average Yield</Label>
                     <div className="bg-indigo-50 p-3 rounded-lg">
-                      <p className="text-xl font-bold text-indigo-700">{selectedRecord.average_yield} units</p>
+                      <p className="text-xl font-bold text-indigo-700">{selectedRecord.average_yield} Mds/acre</p>
                     </div>
                   </div>
                 )}
@@ -960,7 +960,7 @@ export function PreSowingForm() {
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="border-slate-200 hover:border-primary/50 transition-colors">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
@@ -1023,20 +1023,6 @@ export function PreSowingForm() {
           </CardContent>
         </Card>
 
-        <Card className="border-slate-200 hover:border-purple-200 transition-colors">
-          <CardContent className="pt-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-slate-600 mb-1">Planned Area</p>
-                <h3 className="text-2xl font-bold text-purple-700">{totalPlannedArea} ha</h3>
-                <p className="text-xs text-purple-500 mt-1">This season</p>
-              </div>
-              <div className="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center">
-                <Target className="h-6 w-6 text-purple-600" />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Controls Section */}

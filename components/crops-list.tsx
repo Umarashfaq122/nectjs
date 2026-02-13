@@ -212,20 +212,11 @@ export function CropsList() {
     <div className="space-y-8">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-        <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm">
-            <Package className="h-4 w-4 mr-2" />
-            Export Data
-          </Button>
-          <Button size="sm">
-            <Sprout className="h-4 w-4 mr-2" />
-            Add New Crop
-          </Button>
-        </div>
+
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
@@ -244,25 +235,6 @@ export function CropsList() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-          <CardContent className="pt-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-blue-700">
-                  Area Increase
-                </p>
-                <h3 className="text-2xl font-bold text-blue-900 mt-2">
-                  {totalPlannedArea > totalAreaLastYear ? "+" : ""}
-                  {(totalPlannedArea - totalAreaLastYear).toFixed(1)} acres
-                </h3>
-              </div>
-              <div className="h-12 w-12 rounded-full bg-blue-200 flex items-center justify-center">
-                <TrendingUp className="h-6 w-6 text-blue-700" />
-              </div>
-            </div>
-            <p className="text-xs text-blue-600 mt-2">Planned vs Last Year</p>
-          </CardContent>
-        </Card>
 
         <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200">
           <CardContent className="pt-6">
@@ -274,7 +246,7 @@ export function CropsList() {
                 <h3 className="text-2xl font-bold text-amber-900 mt-2">
                   {averageYield.toFixed(1)}
                 </h3>
-                <p className="text-xs text-amber-600 mt-1">tons per acre</p>
+                <p className="text-xs text-amber-600 mt-1">Mds per acre</p>
               </div>
               <div className="h-12 w-12 rounded-full bg-amber-200 flex items-center justify-center">
                 <Scale className="h-6 w-6 text-amber-700" />
@@ -507,7 +479,7 @@ export function CropsList() {
                                       item.average_yield
                                     )}`}
                                   >
-                                    {item.average_yield} tons/acre
+                                    {item.average_yield} Mds/acre
                                   </p>
                                 </div>
                               </div>

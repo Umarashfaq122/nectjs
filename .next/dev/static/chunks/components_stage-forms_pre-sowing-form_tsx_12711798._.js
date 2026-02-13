@@ -38,7 +38,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$list$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__List$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/list.js [app-client] (ecmascript) <export default as List>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up-down.js [app-client] (ecmascript) <export default as ArrowUpDown>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$activity$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Activity$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/activity.js [app-client] (ecmascript) <export default as Activity>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/target.js [app-client] (ecmascript) <export default as Target>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/tabs.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/skeleton.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/progress.tsx [app-client] (ecmascript)");
@@ -555,7 +554,7 @@ function PreSowingForm() {
                                                         className: "text-sm font-medium",
                                                         children: [
                                                             record.average_yield,
-                                                            " units"
+                                                            " Mods per acre"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
@@ -1045,7 +1044,7 @@ function PreSowingForm() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-sm font-medium text-slate-900",
-                                        children: record.average_yield ? `${record.average_yield} units` : "N/A"
+                                        children: record.average_yield ? `${record.average_yield} Mds/acre` : "N/A"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
                                         lineNumber: 631,
@@ -1704,7 +1703,7 @@ function PreSowingForm() {
                                                                 className: "text-xl font-bold text-indigo-700",
                                                                 children: [
                                                                     selectedRecord.average_yield,
-                                                                    " units"
+                                                                    " Mds/acre"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
@@ -2163,7 +2162,7 @@ function PreSowingForm() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4",
+                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                         className: "border-slate-200 hover:border-primary/50 transition-colors",
@@ -2452,78 +2451,6 @@ function PreSowingForm() {
                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
                         lineNumber: 1011,
                         columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                        className: "border-slate-200 hover:border-purple-200 transition-colors",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
-                            className: "pt-6",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-between",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm font-medium text-slate-600 mb-1",
-                                                children: "Planned Area"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1030,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "text-2xl font-bold text-purple-700",
-                                                children: [
-                                                    totalPlannedArea,
-                                                    " ha"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1031,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-xs text-purple-500 mt-1",
-                                                children: "This season"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1032,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1029,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$target$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Target$3e$__["Target"], {
-                                            className: "h-6 w-6 text-purple-600"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1035,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1034,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1028,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1027,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                        lineNumber: 1026,
-                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
@@ -2548,7 +2475,7 @@ function PreSowingForm() {
                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1048,
+                                                lineNumber: 1034,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -2558,18 +2485,18 @@ function PreSowingForm() {
                                                 className: "pl-10 w-full max-w-md border-slate-300 focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1049,
+                                                lineNumber: 1035,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1047,
+                                        lineNumber: 1033,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1046,
+                                    lineNumber: 1032,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2588,12 +2515,12 @@ function PreSowingForm() {
                                                                 placeholder: "Filter by field"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                                lineNumber: 1062,
+                                                                lineNumber: 1048,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                            lineNumber: 1061,
+                                                            lineNumber: 1047,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2603,7 +2530,7 @@ function PreSowingForm() {
                                                                     children: "All Fields"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                                    lineNumber: 1065,
+                                                                    lineNumber: 1051,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 uniqueFields.map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2611,19 +2538,19 @@ function PreSowingForm() {
                                                                         children: field.field_name
                                                                     }, field.id, false, {
                                                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                                        lineNumber: 1067,
+                                                                        lineNumber: 1053,
                                                                         columnNumber: 23
                                                                     }, this))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                            lineNumber: 1064,
+                                                            lineNumber: 1050,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                    lineNumber: 1060,
+                                                    lineNumber: 1046,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2638,12 +2565,12 @@ function PreSowingForm() {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                                lineNumber: 1081,
+                                                                lineNumber: 1067,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                            lineNumber: 1075,
+                                                            lineNumber: 1061,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2655,24 +2582,24 @@ function PreSowingForm() {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                                lineNumber: 1089,
+                                                                lineNumber: 1075,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                            lineNumber: 1083,
+                                                            lineNumber: 1069,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                    lineNumber: 1074,
+                                                    lineNumber: 1060,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1059,
+                                            lineNumber: 1045,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -2686,7 +2613,7 @@ function PreSowingForm() {
                                                         children: "All"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                        lineNumber: 1096,
+                                                        lineNumber: 1082,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -2694,7 +2621,7 @@ function PreSowingForm() {
                                                         children: "Prepared"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                        lineNumber: 1097,
+                                                        lineNumber: 1083,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -2702,30 +2629,30 @@ function PreSowingForm() {
                                                         children: "Not Prepared"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                        lineNumber: 1098,
+                                                        lineNumber: 1084,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1095,
+                                                lineNumber: 1081,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1094,
+                                            lineNumber: 1080,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1058,
+                                    lineNumber: 1044,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1045,
+                            lineNumber: 1031,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2740,7 +2667,7 @@ function PreSowingForm() {
                                             children: filteredData.length
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1107,
+                                            lineNumber: 1093,
                                             columnNumber: 23
                                         }, this),
                                         " of",
@@ -2750,14 +2677,14 @@ function PreSowingForm() {
                                             children: farmActivities.length
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1108,
+                                            lineNumber: 1094,
                                             columnNumber: 15
                                         }, this),
                                         " activities"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1106,
+                                    lineNumber: 1092,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2768,7 +2695,7 @@ function PreSowingForm() {
                                             children: "Sort by:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1111,
+                                            lineNumber: 1097,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2785,7 +2712,7 @@ function PreSowingForm() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                    lineNumber: 1113,
+                                                    lineNumber: 1099,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2799,7 +2726,7 @@ function PreSowingForm() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                    lineNumber: 1121,
+                                                    lineNumber: 1107,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2813,36 +2740,36 @@ function PreSowingForm() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                    lineNumber: 1129,
+                                                    lineNumber: 1115,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                            lineNumber: 1112,
+                                            lineNumber: 1098,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1110,
+                                    lineNumber: 1096,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1105,
+                            lineNumber: 1091,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                    lineNumber: 1044,
+                    lineNumber: 1030,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                lineNumber: 1043,
+                lineNumber: 1029,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2855,7 +2782,7 @@ function PreSowingForm() {
                                 className: "h-12 w-12 text-slate-400 mx-auto mb-4"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1148,
+                                lineNumber: 1134,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2863,7 +2790,7 @@ function PreSowingForm() {
                                 children: "No activities found"
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1149,
+                                lineNumber: 1135,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2871,18 +2798,18 @@ function PreSowingForm() {
                                 children: searchQuery ? "No records match your search criteria. Try different keywords." : "No farm activities have been recorded yet."
                             }, void 0, false, {
                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1152,
+                                lineNumber: 1138,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                        lineNumber: 1147,
+                        lineNumber: 1133,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                    lineNumber: 1146,
+                    lineNumber: 1132,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                     children: [
@@ -2891,14 +2818,14 @@ function PreSowingForm() {
                             children: filteredData.map(renderGridCard)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1162,
+                            lineNumber: 1148,
                             columnNumber: 15
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "space-y-2",
                             children: filteredData.map(renderListView)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1166,
+                            lineNumber: 1152,
                             columnNumber: 15
                         }, this),
                         nextUrl && !isFiltered && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2915,7 +2842,7 @@ function PreSowingForm() {
                                                 className: "h-4 w-4 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1182,
+                                                lineNumber: 1168,
                                                 columnNumber: 23
                                             }, this),
                                             "Loading..."
@@ -2931,14 +2858,14 @@ function PreSowingForm() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                                lineNumber: 1188,
+                                                lineNumber: 1174,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true)
                                 }, void 0, false, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1174,
+                                    lineNumber: 1160,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2949,13 +2876,13 @@ function PreSowingForm() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                    lineNumber: 1194,
+                                    lineNumber: 1180,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1173,
+                            lineNumber: 1159,
                             columnNumber: 15
                         }, this),
                         !nextUrl && !isFiltered && farmActivities.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2967,7 +2894,7 @@ function PreSowingForm() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1204,
+                                        lineNumber: 1190,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2978,18 +2905,18 @@ function PreSowingForm() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1205,
+                                        lineNumber: 1191,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1203,
+                                lineNumber: 1189,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1202,
+                            lineNumber: 1188,
                             columnNumber: 15
                         }, this),
                         isFiltered && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3001,7 +2928,7 @@ function PreSowingForm() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1213,
+                                        lineNumber: 1199,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3012,7 +2939,7 @@ function PreSowingForm() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1214,
+                                        lineNumber: 1200,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3028,25 +2955,25 @@ function PreSowingForm() {
                                         children: "Clear Filters"
                                     }, void 0, false, {
                                         fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                        lineNumber: 1215,
+                                        lineNumber: 1201,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                                lineNumber: 1212,
+                                lineNumber: 1198,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                            lineNumber: 1211,
+                            lineNumber: 1197,
                             columnNumber: 15
                         }, this)
                     ]
                 }, void 0, true)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                lineNumber: 1144,
+                lineNumber: 1130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -3057,12 +2984,12 @@ function PreSowingForm() {
                     children: renderDetailModal()
                 }, void 0, false, {
                     fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                    lineNumber: 1237,
+                    lineNumber: 1223,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/stage-forms/pre-sowing-form.tsx",
-                lineNumber: 1236,
+                lineNumber: 1222,
                 columnNumber: 7
             }, this)
         ]

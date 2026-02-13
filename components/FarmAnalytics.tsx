@@ -765,8 +765,9 @@ export default function FarmAnalytics() {
       color:
         name === "Healthy"
           ? "#10B981"
-          : name === "Moderate"
+          : name === "Fair"
             ? "#F59E0B"
+           
             : name === "Poor"
               ? "#EF4444"
               : PIE_COLORS[index % PIE_COLORS.length],
@@ -796,7 +797,7 @@ export default function FarmAnalytics() {
           healthMap["Healthy"] += 1;
         } else if (
           normalizedHealth === "fair" ||
-          normalizedHealth === "moderate" ||
+          normalizedHealth === "" ||
           normalizedHealth === "average"
         ) {
           healthMap["Fair"] += 1;

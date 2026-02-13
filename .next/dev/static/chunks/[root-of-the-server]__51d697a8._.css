@@ -4753,12 +4753,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:border-purple-200:hover {
-      border-color: var(--color-purple-200);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:border-rose-200:hover {
       border-color: var(--color-rose-200);
     }

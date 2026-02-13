@@ -1208,7 +1208,7 @@ function DashboardHeader() {
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "rounded-lg border bg-card px-4 py-3",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "font-medium",
+                                                                className: "text-sm",
                                                                 children: [
                                                                     user.firstName,
                                                                     " ",
@@ -1244,7 +1244,7 @@ function DashboardHeader() {
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "rounded-lg border bg-card px-4 py-3",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "font-medium",
+                                                                className: "text-sm",
                                                                 children: user.email
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/dashboard-header.tsx",
@@ -2523,7 +2523,7 @@ function FarmAnalytics() {
         return Object.entries(healthMap).map(([name, value], index)=>({
                 name,
                 value,
-                color: name === "Healthy" ? "#10B981" : name === "Moderate" ? "#F59E0B" : name === "Poor" ? "#EF4444" : PIE_COLORS[index % PIE_COLORS.length]
+                color: name === "Healthy" ? "#10B981" : name === "Fair" ? "#F59E0B" : name === "Poor" ? "#EF4444" : PIE_COLORS[index % PIE_COLORS.length]
             }));
     }, [
         selectedStage,
@@ -2542,7 +2542,7 @@ function FarmAnalytics() {
                 // Map various possible values to our standard categories
                 if (normalizedHealth === "healthy" || normalizedHealth === "good" || normalizedHealth === "excellent") {
                     healthMap["Healthy"] += 1;
-                } else if (normalizedHealth === "fair" || normalizedHealth === "moderate" || normalizedHealth === "average") {
+                } else if (normalizedHealth === "fair" || normalizedHealth === "" || normalizedHealth === "average") {
                     healthMap["Fair"] += 1;
                 } else if (normalizedHealth.includes("healthy")) {
                     healthMap["Healthy"] += 1;
@@ -2608,7 +2608,7 @@ function FarmAnalytics() {
                             className: "h-24 w-24 rounded-full border-4 border-t-blue-500 border-slate-200 animate-spin"
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 879,
+                            lineNumber: 880,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2617,18 +2617,18 @@ function FarmAnalytics() {
                                 className: "h-10 w-10 text-blue-500 animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 881,
+                                lineNumber: 882,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 880,
+                            lineNumber: 881,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 878,
+                    lineNumber: 879,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2636,7 +2636,7 @@ function FarmAnalytics() {
                     children: "Loading farm analytics..."
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 884,
+                    lineNumber: 885,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2644,13 +2644,13 @@ function FarmAnalytics() {
                     children: "Fetching data from all crop stages"
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 887,
+                    lineNumber: 888,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/FarmAnalytics.tsx",
-            lineNumber: 877,
+            lineNumber: 878,
             columnNumber: 7
         }, this);
     }
@@ -2667,17 +2667,17 @@ function FarmAnalytics() {
                             children: "⚠️"
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 899,
+                            lineNumber: 900,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 898,
+                        lineNumber: 899,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 897,
+                    lineNumber: 898,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2685,7 +2685,7 @@ function FarmAnalytics() {
                     children: "Error Loading Data"
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 902,
+                    lineNumber: 903,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2693,7 +2693,7 @@ function FarmAnalytics() {
                     children: error
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 905,
+                    lineNumber: 906,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2702,13 +2702,13 @@ function FarmAnalytics() {
                     children: "Try Again"
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 906,
+                    lineNumber: 907,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/FarmAnalytics.tsx",
-            lineNumber: 896,
+            lineNumber: 897,
             columnNumber: 7
         }, this);
     }
@@ -2724,7 +2724,7 @@ function FarmAnalytics() {
                             children: "Crop Analytics Dashboard"
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 923,
+                            lineNumber: 924,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2732,18 +2732,18 @@ function FarmAnalytics() {
                             children: "Analyze crop performance across different growth stages and zones"
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 926,
+                            lineNumber: 927,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 922,
+                    lineNumber: 923,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/FarmAnalytics.tsx",
-                lineNumber: 921,
+                lineNumber: 922,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2763,14 +2763,14 @@ function FarmAnalytics() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 939,
+                                                lineNumber: 940,
                                                 columnNumber: 17
                                             }, this),
                                             "Crop"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 938,
+                                        lineNumber: 939,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -2783,12 +2783,12 @@ function FarmAnalytics() {
                                                     placeholder: "Select crop"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 944,
+                                                    lineNumber: 945,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 943,
+                                                lineNumber: 944,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2798,7 +2798,7 @@ function FarmAnalytics() {
                                                         children: "All Crops"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 947,
+                                                        lineNumber: 948,
                                                         columnNumber: 19
                                                     }, this),
                                                     crops.map((crop)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2806,25 +2806,25 @@ function FarmAnalytics() {
                                                             children: crop
                                                         }, crop, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 949,
+                                                            lineNumber: 950,
                                                             columnNumber: 21
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 946,
+                                                lineNumber: 947,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 942,
+                                        lineNumber: 943,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 937,
+                                lineNumber: 938,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2837,14 +2837,14 @@ function FarmAnalytics() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 960,
+                                                lineNumber: 961,
                                                 columnNumber: 17
                                             }, this),
                                             "Growth Stage"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 959,
+                                        lineNumber: 960,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -2857,12 +2857,12 @@ function FarmAnalytics() {
                                                     placeholder: "Select stage"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 965,
+                                                    lineNumber: 966,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 964,
+                                                lineNumber: 965,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2876,29 +2876,29 @@ function FarmAnalytics() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 970,
+                                                            lineNumber: 971,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, stage.value, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 969,
+                                                        lineNumber: 970,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 967,
+                                                lineNumber: 968,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 963,
+                                        lineNumber: 964,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 958,
+                                lineNumber: 959,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2911,14 +2911,14 @@ function FarmAnalytics() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 983,
+                                                lineNumber: 984,
                                                 columnNumber: 17
                                             }, this),
                                             "Zone"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 982,
+                                        lineNumber: 983,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -2931,12 +2931,12 @@ function FarmAnalytics() {
                                                     placeholder: "Select zone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 988,
+                                                    lineNumber: 989,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 987,
+                                                lineNumber: 988,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2946,7 +2946,7 @@ function FarmAnalytics() {
                                                         children: "All Zones"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 991,
+                                                        lineNumber: 992,
                                                         columnNumber: 19
                                                     }, this),
                                                     zones.map((zone)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2954,41 +2954,41 @@ function FarmAnalytics() {
                                                             children: zone
                                                         }, zone, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 993,
+                                                            lineNumber: 994,
                                                             columnNumber: 21
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 990,
+                                                lineNumber: 991,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 986,
+                                        lineNumber: 987,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 981,
+                                lineNumber: 982,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 935,
+                        lineNumber: 936,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/FarmAnalytics.tsx",
-                    lineNumber: 934,
+                    lineNumber: 935,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/FarmAnalytics.tsx",
-                lineNumber: 933,
+                lineNumber: 934,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3008,7 +3008,7 @@ function FarmAnalytics() {
                                                 children: "Total Fields"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1010,
+                                                lineNumber: 1011,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3016,7 +3016,7 @@ function FarmAnalytics() {
                                                 children: stats.totalFields
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1013,
+                                                lineNumber: 1014,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3028,13 +3028,13 @@ function FarmAnalytics() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1016,
+                                                lineNumber: 1017,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1009,
+                                        lineNumber: 1010,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3043,28 +3043,28 @@ function FarmAnalytics() {
                                             className: "h-6 w-6 text-blue-600"
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1021,
+                                            lineNumber: 1022,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1020,
+                                        lineNumber: 1021,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1008,
+                                lineNumber: 1009,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 1007,
+                            lineNumber: 1008,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1006,
+                        lineNumber: 1007,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3081,7 +3081,7 @@ function FarmAnalytics() {
                                                 children: "Active Zones"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1031,
+                                                lineNumber: 1032,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3089,7 +3089,7 @@ function FarmAnalytics() {
                                                 children: stats.activeZones
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1034,
+                                                lineNumber: 1035,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3097,13 +3097,13 @@ function FarmAnalytics() {
                                                 children: selectedZone === "all" ? "Across all zones" : `Zone: ${selectedZone}`
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1037,
+                                                lineNumber: 1038,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1030,
+                                        lineNumber: 1031,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3112,34 +3112,34 @@ function FarmAnalytics() {
                                             className: "h-6 w-6 text-emerald-600"
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1044,
+                                            lineNumber: 1045,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1043,
+                                        lineNumber: 1044,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1029,
+                                lineNumber: 1030,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 1028,
+                            lineNumber: 1029,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1027,
+                        lineNumber: 1028,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/FarmAnalytics.tsx",
-                lineNumber: 1005,
+                lineNumber: 1006,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3157,12 +3157,12 @@ function FarmAnalytics() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/FarmAnalytics.tsx",
-                            lineNumber: 1055,
+                            lineNumber: 1056,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1054,
+                        lineNumber: 1055,
                         columnNumber: 9
                     }, this),
                     selectedStage === "pre-sowing" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3181,14 +3181,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-blue-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1070,
+                                                        lineNumber: 1071,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Crop Rotation Patterns"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1069,
+                                                lineNumber: 1070,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3196,13 +3196,13 @@ function FarmAnalytics() {
                                                 children: "Distribution of crop rotation patterns across zones (Percentage)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1073,
+                                                lineNumber: 1074,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1068,
+                                        lineNumber: 1069,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3220,7 +3220,7 @@ function FarmAnalytics() {
                                                             stroke: "#f1f5f9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1083,
+                                                            lineNumber: 1084,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -3232,7 +3232,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1084,
+                                                            lineNumber: 1085,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -3250,7 +3250,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1090,
+                                                            lineNumber: 1091,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3267,12 +3267,12 @@ function FarmAnalytics() {
                                                             labelFormatter: (label)=>`Zone: ${label}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1102,
+                                                            lineNumber: 1103,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {}, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1112,
+                                                            lineNumber: 1113,
                                                             columnNumber: 25
                                                         }, this),
                                                         (()=>{
@@ -3291,19 +3291,19 @@ function FarmAnalytics() {
                                                                     ]
                                                                 }, pattern, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1119,
+                                                                    lineNumber: 1120,
                                                                     columnNumber: 29
                                                                 }, this));
                                                         })()
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1082,
+                                                    lineNumber: 1083,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1081,
+                                                lineNumber: 1082,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -3312,14 +3312,14 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1133,
+                                                        lineNumber: 1134,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No crop rotation pattern data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1134,
+                                                        lineNumber: 1135,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3327,29 +3327,29 @@ function FarmAnalytics() {
                                                         children: "Crop rotation data will appear as it's recorded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1135,
+                                                        lineNumber: 1136,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1132,
+                                                lineNumber: 1133,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1079,
+                                            lineNumber: 1080,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1078,
+                                        lineNumber: 1079,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1067,
+                                lineNumber: 1068,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3365,14 +3365,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1148,
+                                                        lineNumber: 1149,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Average Yield Last Year"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1147,
+                                                lineNumber: 1148,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3380,13 +3380,13 @@ function FarmAnalytics() {
                                                 children: "Yield distribution across zones (Mounds/Acre)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1151,
+                                                lineNumber: 1152,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1146,
+                                        lineNumber: 1147,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3414,12 +3414,12 @@ function FarmAnalytics() {
                                                                     strokeWidth: 2
                                                                 }, index, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1172,
+                                                                    lineNumber: 1173,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1160,
+                                                            lineNumber: 1161,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3435,7 +3435,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1180,
+                                                            lineNumber: 1181,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -3443,18 +3443,18 @@ function FarmAnalytics() {
                                                             height: 36
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1192,
+                                                            lineNumber: 1193,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1159,
+                                                    lineNumber: 1160,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1158,
+                                                lineNumber: 1159,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -3463,14 +3463,14 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1197,
+                                                        lineNumber: 1198,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No yield data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1198,
+                                                        lineNumber: 1199,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3478,35 +3478,35 @@ function FarmAnalytics() {
                                                         children: "Yield data will appear as it's recorded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1199,
+                                                        lineNumber: 1200,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1196,
+                                                lineNumber: 1197,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1156,
+                                            lineNumber: 1157,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1155,
+                                        lineNumber: 1156,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1145,
+                                lineNumber: 1146,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1065,
+                        lineNumber: 1066,
                         columnNumber: 11
                     }, this),
                     selectedStage === "sowing" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3525,14 +3525,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-blue-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1217,
+                                                        lineNumber: 1218,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Seed Rate by Zone"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1216,
+                                                lineNumber: 1217,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3540,13 +3540,13 @@ function FarmAnalytics() {
                                                 children: "Average seed rate across zones (kg/acre)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1220,
+                                                lineNumber: 1221,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1215,
+                                        lineNumber: 1216,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3564,7 +3564,7 @@ function FarmAnalytics() {
                                                             stroke: "#f1f5f9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1229,
+                                                            lineNumber: 1230,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -3576,7 +3576,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1230,
+                                                            lineNumber: 1231,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -3594,7 +3594,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1236,
+                                                            lineNumber: 1237,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3610,7 +3610,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1248,
+                                                            lineNumber: 1249,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Bar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Bar"], {
@@ -3625,18 +3625,18 @@ function FarmAnalytics() {
                                                             fill: COLORS.secondary
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1257,
+                                                            lineNumber: 1258,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1228,
+                                                    lineNumber: 1229,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1227,
+                                                lineNumber: 1228,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -3645,36 +3645,36 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1267,
+                                                        lineNumber: 1268,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No seed rate data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1268,
+                                                        lineNumber: 1269,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1266,
+                                                lineNumber: 1267,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1225,
+                                            lineNumber: 1226,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1224,
+                                        lineNumber: 1225,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1214,
+                                lineNumber: 1215,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3690,14 +3690,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1279,
+                                                        lineNumber: 1280,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Wheat Variety Distribution"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1278,
+                                                lineNumber: 1279,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3705,13 +3705,13 @@ function FarmAnalytics() {
                                                 children: "Most commonly used wheat varieties"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1282,
+                                                lineNumber: 1283,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1277,
+                                        lineNumber: 1278,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3739,12 +3739,12 @@ function FarmAnalytics() {
                                                                     strokeWidth: 2
                                                                 }, index, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1303,
+                                                                    lineNumber: 1304,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1291,
+                                                            lineNumber: 1292,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3760,7 +3760,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1311,
+                                                            lineNumber: 1312,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -3768,18 +3768,18 @@ function FarmAnalytics() {
                                                             height: 36
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1320,
+                                                            lineNumber: 1321,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1290,
+                                                    lineNumber: 1291,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1289,
+                                                lineNumber: 1290,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -3788,36 +3788,36 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1325,
+                                                        lineNumber: 1326,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No variety data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1326,
+                                                        lineNumber: 1327,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1324,
+                                                lineNumber: 1325,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1287,
+                                            lineNumber: 1288,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1286,
+                                        lineNumber: 1287,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1276,
+                                lineNumber: 1277,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3833,14 +3833,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-purple-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1337,
+                                                        lineNumber: 1338,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Sowing Methods"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1336,
+                                                lineNumber: 1337,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3848,13 +3848,13 @@ function FarmAnalytics() {
                                                 children: "Distribution of sowing methods used"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1340,
+                                                lineNumber: 1341,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1335,
+                                        lineNumber: 1336,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3873,7 +3873,7 @@ function FarmAnalytics() {
                                                             stroke: "#f1f5f9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1352,
+                                                            lineNumber: 1353,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -3891,7 +3891,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1353,
+                                                            lineNumber: 1354,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -3905,7 +3905,7 @@ function FarmAnalytics() {
                                                             width: 100
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1365,
+                                                            lineNumber: 1366,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3921,7 +3921,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1373,
+                                                            lineNumber: 1374,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Bar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Bar"], {
@@ -3937,23 +3937,23 @@ function FarmAnalytics() {
                                                                     fill: entry.color
                                                                 }, `cell-${index}`, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1388,
+                                                                    lineNumber: 1389,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1382,
+                                                            lineNumber: 1383,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1348,
+                                                    lineNumber: 1349,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1347,
+                                                lineNumber: 1348,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -3962,36 +3962,36 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1398,
+                                                        lineNumber: 1399,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No sowing method data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1399,
+                                                        lineNumber: 1400,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1397,
+                                                lineNumber: 1398,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1345,
+                                            lineNumber: 1346,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1344,
+                                        lineNumber: 1345,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1334,
+                                lineNumber: 1335,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -4007,14 +4007,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-amber-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1410,
+                                                        lineNumber: 1411,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Basal Fertilizers Used"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1409,
+                                                lineNumber: 1410,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4022,13 +4022,13 @@ function FarmAnalytics() {
                                                 children: "Most commonly used basal fertilizers"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1413,
+                                                lineNumber: 1414,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1408,
+                                        lineNumber: 1409,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4056,12 +4056,12 @@ function FarmAnalytics() {
                                                                     strokeWidth: 2
                                                                 }, index, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1434,
+                                                                    lineNumber: 1435,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1422,
+                                                            lineNumber: 1423,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -4077,7 +4077,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1442,
+                                                            lineNumber: 1443,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -4085,18 +4085,18 @@ function FarmAnalytics() {
                                                             height: 36
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1451,
+                                                            lineNumber: 1452,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1421,
+                                                    lineNumber: 1422,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1420,
+                                                lineNumber: 1421,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -4105,36 +4105,36 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1456,
+                                                        lineNumber: 1457,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No fertilizer data available"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1457,
+                                                        lineNumber: 1458,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1455,
+                                                lineNumber: 1456,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1418,
+                                            lineNumber: 1419,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1417,
+                                        lineNumber: 1418,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1407,
+                                lineNumber: 1408,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -4150,14 +4150,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-blue-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1468,
+                                                        lineNumber: 1469,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Seed & Soil Treatment Statistics"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1467,
+                                                lineNumber: 1468,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4165,13 +4165,13 @@ function FarmAnalytics() {
                                                 children: "Seed treatment, soil conditioner, and bio-stimulant usage"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1471,
+                                                lineNumber: 1472,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1466,
+                                        lineNumber: 1467,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4189,7 +4189,7 @@ function FarmAnalytics() {
                                                                     className: "h-5 w-5 text-emerald-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1480,
+                                                                    lineNumber: 1481,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -4197,13 +4197,13 @@ function FarmAnalytics() {
                                                                     children: "Seed Treatment"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1481,
+                                                                    lineNumber: 1482,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1479,
+                                                            lineNumber: 1480,
                                                             columnNumber: 21
                                                         }, this),
                                                         seedTreatmentData ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -4219,7 +4219,7 @@ function FarmAnalytics() {
                                                                                     children: "Treated:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1487,
+                                                                                    lineNumber: 1488,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4230,13 +4230,13 @@ function FarmAnalytics() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1488,
+                                                                                    lineNumber: 1489,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1486,
+                                                                            lineNumber: 1487,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4247,7 +4247,7 @@ function FarmAnalytics() {
                                                                                     children: "Not Treated:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1493,
+                                                                                    lineNumber: 1494,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4258,13 +4258,13 @@ function FarmAnalytics() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1496,
+                                                                                    lineNumber: 1497,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1492,
+                                                                            lineNumber: 1493,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4276,12 +4276,12 @@ function FarmAnalytics() {
                                                                                 }
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                lineNumber: 1501,
+                                                                                lineNumber: 1502,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1500,
+                                                                            lineNumber: 1501,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4292,13 +4292,13 @@ function FarmAnalytics() {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1508,
+                                                                            lineNumber: 1509,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1485,
+                                                                    lineNumber: 1486,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 seedTreatmentData.products.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4309,7 +4309,7 @@ function FarmAnalytics() {
                                                                             children: "Top Products:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1514,
+                                                                            lineNumber: 1515,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4322,7 +4322,7 @@ function FarmAnalytics() {
                                                                                             children: product.name
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                            lineNumber: 1523,
+                                                                                            lineNumber: 1524,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4333,24 +4333,24 @@ function FarmAnalytics() {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                            lineNumber: 1526,
+                                                                                            lineNumber: 1527,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, idx, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1519,
+                                                                                    lineNumber: 1520,
                                                                                     columnNumber: 33
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1517,
+                                                                            lineNumber: 1518,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1513,
+                                                                    lineNumber: 1514,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
@@ -4359,13 +4359,13 @@ function FarmAnalytics() {
                                                             children: "No seed treatment data"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1536,
+                                                            lineNumber: 1537,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1478,
+                                                    lineNumber: 1479,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4378,7 +4378,7 @@ function FarmAnalytics() {
                                                                     className: "h-5 w-5 text-orange-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1545,
+                                                                    lineNumber: 1546,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -4386,13 +4386,13 @@ function FarmAnalytics() {
                                                                     children: "Soil Conditioner"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1546,
+                                                                    lineNumber: 1547,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1544,
+                                                            lineNumber: 1545,
                                                             columnNumber: 21
                                                         }, this),
                                                         soilConditionerData ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -4408,7 +4408,7 @@ function FarmAnalytics() {
                                                                                     children: "Applied:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1552,
+                                                                                    lineNumber: 1553,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4419,13 +4419,13 @@ function FarmAnalytics() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1553,
+                                                                                    lineNumber: 1554,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1551,
+                                                                            lineNumber: 1552,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4436,7 +4436,7 @@ function FarmAnalytics() {
                                                                                     children: "Not Applied:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1558,
+                                                                                    lineNumber: 1559,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4447,13 +4447,13 @@ function FarmAnalytics() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1561,
+                                                                                    lineNumber: 1562,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1557,
+                                                                            lineNumber: 1558,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4465,12 +4465,12 @@ function FarmAnalytics() {
                                                                                 }
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                lineNumber: 1566,
+                                                                                lineNumber: 1567,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1565,
+                                                                            lineNumber: 1566,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4481,13 +4481,13 @@ function FarmAnalytics() {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1573,
+                                                                            lineNumber: 1574,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1550,
+                                                                    lineNumber: 1551,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 soilConditionerData.products.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4498,7 +4498,7 @@ function FarmAnalytics() {
                                                                             children: "Top Products:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1579,
+                                                                            lineNumber: 1580,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4511,7 +4511,7 @@ function FarmAnalytics() {
                                                                                             children: product.name
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                            lineNumber: 1588,
+                                                                                            lineNumber: 1589,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4522,24 +4522,24 @@ function FarmAnalytics() {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                            lineNumber: 1591,
+                                                                                            lineNumber: 1592,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, idx, true, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1584,
+                                                                                    lineNumber: 1585,
                                                                                     columnNumber: 33
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1582,
+                                                                            lineNumber: 1583,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1578,
+                                                                    lineNumber: 1579,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
@@ -4548,13 +4548,13 @@ function FarmAnalytics() {
                                                             children: "No soil conditioner data"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1601,
+                                                            lineNumber: 1602,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1543,
+                                                    lineNumber: 1544,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4567,7 +4567,7 @@ function FarmAnalytics() {
                                                                     className: "h-5 w-5 text-purple-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1610,
+                                                                    lineNumber: 1611,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -4575,13 +4575,13 @@ function FarmAnalytics() {
                                                                     children: "Bio-Stimulant"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1611,
+                                                                    lineNumber: 1612,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1609,
+                                                            lineNumber: 1610,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4606,12 +4606,12 @@ function FarmAnalytics() {
                                                                                     strokeWidth: 2
                                                                                 }, index, false, {
                                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                                    lineNumber: 1628,
+                                                                                    lineNumber: 1629,
                                                                                     columnNumber: 33
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1617,
+                                                                            lineNumber: 1618,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -4627,7 +4627,7 @@ function FarmAnalytics() {
                                                                                 ]
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1636,
+                                                                            lineNumber: 1637,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -4635,18 +4635,18 @@ function FarmAnalytics() {
                                                                             height: 36
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                            lineNumber: 1648,
+                                                                            lineNumber: 1649,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1616,
+                                                                    lineNumber: 1617,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                lineNumber: 1615,
+                                                                lineNumber: 1616,
                                                                 columnNumber: 25
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -4655,7 +4655,7 @@ function FarmAnalytics() {
                                                                         className: "h-10 w-10 mb-2 text-slate-300"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                        lineNumber: 1653,
+                                                                        lineNumber: 1654,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4663,47 +4663,47 @@ function FarmAnalytics() {
                                                                         children: "No bio-stimulant data"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                        lineNumber: 1654,
+                                                                        lineNumber: 1655,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                lineNumber: 1652,
+                                                                lineNumber: 1653,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1613,
+                                                            lineNumber: 1614,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1608,
+                                                    lineNumber: 1609,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1476,
+                                            lineNumber: 1477,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1475,
+                                        lineNumber: 1476,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1465,
+                                lineNumber: 1466,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1212,
+                        lineNumber: 1213,
                         columnNumber: 11
                     }, this),
                     selectedStage === "emergence" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4722,14 +4722,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-purple-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1672,
+                                                        lineNumber: 1673,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Germination Percentage by Zone"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1671,
+                                                lineNumber: 1672,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4737,13 +4737,13 @@ function FarmAnalytics() {
                                                 children: "Average germination rates across zones (%)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1675,
+                                                lineNumber: 1676,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1670,
+                                        lineNumber: 1671,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4761,7 +4761,7 @@ function FarmAnalytics() {
                                                             stroke: "#f1f5f9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1683,
+                                                            lineNumber: 1684,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -4773,7 +4773,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1684,
+                                                            lineNumber: 1685,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -4795,7 +4795,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1690,
+                                                            lineNumber: 1691,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -4811,7 +4811,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1703,
+                                                            lineNumber: 1704,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Area$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Area"], {
@@ -4824,34 +4824,34 @@ function FarmAnalytics() {
                                                             strokeWidth: 2
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1712,
+                                                            lineNumber: 1713,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1682,
+                                                    lineNumber: 1683,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1681,
+                                                lineNumber: 1682,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1680,
+                                            lineNumber: 1681,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1679,
+                                        lineNumber: 1680,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1669,
+                                lineNumber: 1670,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -4867,14 +4867,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1731,
+                                                        lineNumber: 1732,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Crop Health Distribution"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1730,
+                                                lineNumber: 1731,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4882,13 +4882,13 @@ function FarmAnalytics() {
                                                 children: "Health status of crops across fields"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1734,
+                                                lineNumber: 1735,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1729,
+                                        lineNumber: 1730,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4916,12 +4916,12 @@ function FarmAnalytics() {
                                                                     strokeWidth: 2
                                                                 }, index, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1754,
+                                                                    lineNumber: 1755,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1742,
+                                                            lineNumber: 1743,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -4937,7 +4937,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1762,
+                                                            lineNumber: 1763,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -4945,40 +4945,40 @@ function FarmAnalytics() {
                                                             height: 36
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1771,
+                                                            lineNumber: 1772,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1741,
+                                                    lineNumber: 1742,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1740,
+                                                lineNumber: 1741,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1739,
+                                            lineNumber: 1740,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1738,
+                                        lineNumber: 1739,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1728,
+                                lineNumber: 1729,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1667,
+                        lineNumber: 1668,
                         columnNumber: 11
                     }, this),
                     selectedStage === "tillering" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4997,14 +4997,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-emerald-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1787,
+                                                        lineNumber: 1788,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Fertilizer Types Used"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1786,
+                                                lineNumber: 1787,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -5012,13 +5012,13 @@ function FarmAnalytics() {
                                                 children: "Most commonly used fertilizer types"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1790,
+                                                lineNumber: 1791,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1785,
+                                        lineNumber: 1786,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -5046,12 +5046,12 @@ function FarmAnalytics() {
                                                                     strokeWidth: 2
                                                                 }, index, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1810,
+                                                                    lineNumber: 1811,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1798,
+                                                            lineNumber: 1799,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -5067,7 +5067,7 @@ function FarmAnalytics() {
                                                                 ]
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1818,
+                                                            lineNumber: 1819,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Legend"], {
@@ -5075,34 +5075,34 @@ function FarmAnalytics() {
                                                             height: 36
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1827,
+                                                            lineNumber: 1828,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1797,
+                                                    lineNumber: 1798,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1796,
+                                                lineNumber: 1797,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1795,
+                                            lineNumber: 1796,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1794,
+                                        lineNumber: 1795,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1784,
+                                lineNumber: 1785,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -5118,14 +5118,14 @@ function FarmAnalytics() {
                                                         className: "h-5 w-5 text-amber-500"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1838,
+                                                        lineNumber: 1839,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Crop Health Distribution"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1837,
+                                                lineNumber: 1838,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -5133,13 +5133,13 @@ function FarmAnalytics() {
                                                 children: "Health status: Healthy vs Fair"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1841,
+                                                lineNumber: 1842,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1836,
+                                        lineNumber: 1837,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -5157,7 +5157,7 @@ function FarmAnalytics() {
                                                             stroke: "#f1f5f9"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1850,
+                                                            lineNumber: 1851,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -5169,7 +5169,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1851,
+                                                            lineNumber: 1852,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -5188,7 +5188,7 @@ function FarmAnalytics() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1857,
+                                                            lineNumber: 1858,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -5205,7 +5205,7 @@ function FarmAnalytics() {
                                                             labelFormatter: (label)=>`Health Status: ${label}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1870,
+                                                            lineNumber: 1871,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Bar$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Bar"], {
@@ -5221,23 +5221,23 @@ function FarmAnalytics() {
                                                                     fill: entry.health === "Healthy" ? "#10B981" : entry.health === "Fair" ? "#F59E0B" : COLORS.info
                                                                 }, `cell-${index}`, false, {
                                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                                    lineNumber: 1886,
+                                                                    lineNumber: 1887,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                                            lineNumber: 1880,
+                                                            lineNumber: 1881,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/FarmAnalytics.tsx",
-                                                    lineNumber: 1849,
+                                                    lineNumber: 1850,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1848,
+                                                lineNumber: 1849,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-full flex flex-col items-center justify-center text-slate-500",
@@ -5246,14 +5246,14 @@ function FarmAnalytics() {
                                                         className: "h-12 w-12 mb-3 text-slate-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1902,
+                                                        lineNumber: 1903,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "No crop health data available for tillering stage"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1903,
+                                                        lineNumber: 1904,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5261,35 +5261,35 @@ function FarmAnalytics() {
                                                         children: "Health data will appear as it's recorded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                                        lineNumber: 1904,
+                                                        lineNumber: 1905,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                                lineNumber: 1901,
+                                                lineNumber: 1902,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/FarmAnalytics.tsx",
-                                            lineNumber: 1846,
+                                            lineNumber: 1847,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/FarmAnalytics.tsx",
-                                        lineNumber: 1845,
+                                        lineNumber: 1846,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1835,
+                                lineNumber: 1836,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1782,
+                        lineNumber: 1783,
                         columnNumber: 11
                     }, this),
                     selectedStage === "booting" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5299,7 +5299,7 @@ function FarmAnalytics() {
                                 className: "h-16 w-16 mb-4 text-slate-300"
                             }, void 0, false, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1918,
+                                lineNumber: 1919,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5307,7 +5307,7 @@ function FarmAnalytics() {
                                 children: "Booting Stage Analytics"
                             }, void 0, false, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1919,
+                                lineNumber: 1920,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5315,25 +5315,25 @@ function FarmAnalytics() {
                                 children: "Booting stage data will be available soon"
                             }, void 0, false, {
                                 fileName: "[project]/components/FarmAnalytics.tsx",
-                                lineNumber: 1920,
+                                lineNumber: 1921,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/FarmAnalytics.tsx",
-                        lineNumber: 1917,
+                        lineNumber: 1918,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/FarmAnalytics.tsx",
-                lineNumber: 1052,
+                lineNumber: 1053,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/FarmAnalytics.tsx",
-        lineNumber: 919,
+        lineNumber: 920,
         columnNumber: 5
     }, this);
 }
